@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=§, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To-Do List</title>
-</head>
-<body>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +13,7 @@
             <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
             <i class="uil uil-notes note-icon"></i>
         </div>
-        <ul id="toDoList"></ul>      
+        <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span>You have <span id="pendingNum">no </span> tasks pending. </span>
             <button id="clearButton">Clear All</button>
