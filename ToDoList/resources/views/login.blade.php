@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Login || HTML CSS JavaScript</title>
 
-    <link rel="stylesheet" href="Loginstyle.css" />
+    <link rel="stylesheet" href="<?php asset('css/Loginstyle.css') ?>">
 </head>
 
 <body>
