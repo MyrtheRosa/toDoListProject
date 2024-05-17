@@ -2,42 +2,23 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class RouteServiceProvider extends ServiceProvider
+class AppServiceProvider extends ServiceProvider
 {
     /**
-     * The path to the "home" route for your application.
-     *
-     * This is used by Laravel authentication to redirect users after login.
-     *
-     * @var string
+     * Register any application services.
      */
-    public const HOME = '/main';
-
-    /**
-     * Define your route model bindings, pattern filters, etc.
-     */
-    public function boot(): void
+    public function register(): void
     {
-        $this->configureRateLimiting();
-
-        $this->routes(function () {
-            Route::middleware('web')
-                ->group(base_path('routes/web.php'));
-
-            Route::middleware('api')
-                ->prefix('api')
-                ->group(base_path('routes/api.php'));
-        });
+        //
     }
 
     /**
-     * Configure the rate limiters for the application.
+     * Bootstrap any application services.
      */
-    protected function configureRateLimiting(): void
+    public function boot(): void
     {
-        // Rate limiting configuration
+        //
     }
 }

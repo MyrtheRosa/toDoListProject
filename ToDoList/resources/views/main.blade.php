@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List || HTML CSS JavaScript</title>
 
-    <link rel="stylesheet" href="toDoListStyle.css"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/toDoListStyle.css') }}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
             <button id="clearButton">Clear All</button>
         </div>
     </div>
-    <script src="toDoScript.js"></script>
+    <script src="{{ asset('assets/js/toDoScript.js') }}"></script>
 </body>
 </html>
 </body>
