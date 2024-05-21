@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #e3f2;
+}
+
+#display {
+    position: relative;
+    max-width: 480px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 8px auto 0px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#display #inputField {
+    position: relative;
+    height: 64px;
+    width: 100%;
+}
+
+#inputField textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 18px 45px 18px 15px;
+    border: 1px solid #ccc;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#inputField .note-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 24px;
+    color: #e3f2;
+}
+
+#inputField textarea:focus~.note-icon {
+    color: rgba(234, 118, 234, 0.434);
+}
+
+#display #toDoList {
+    max-height: 380px;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+#toDoList #list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: #e3f2;
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+#toDoList input {
+    height: 16px;
+    min-width: 16px;
+    accent-color: #e3f2;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#toDoList #task {
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+#list input:checked~#task {
+    text-decoration: line-through;
+}
+
+#toDoList #list i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    padding: 5px;
+    opacity: 0.6;
+    cursor: pointer;
+    display: none;
+}
+
+#toDoList #list:hover i {
+    display: inline-flex;
+}
+
+#toDoList #list i:hover {
+    opacity: 1;
+}
+
+#display #pendingTasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25px;
+
+}
+
+#pendingTasks span {
+    color: darkviolet;
+}
+
+#pendingTasks #clearButton {
+    padding: 6px 12px;
+    outline: none;
+    border: none;
+    background-color:#e3f2;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#pendingTasks #clearButton:hover {
+    background-color:rgba(234, 118, 234, 0.434);
+}
+
+@media screen and (max-width: 350px) {
+    #display{
+        padding: 25px 10px;
+    }
+}
