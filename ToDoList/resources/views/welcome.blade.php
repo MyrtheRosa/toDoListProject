@@ -21,7 +21,7 @@
                     <input type="checkbox" id="signUpCheckbox" />
                     <label for="signUpCheckbox">I accept all terms & conditions</label>
                 </div>
-                <input type="submit" value="Signup" />>
+                <input type="submit" value="Signup" />
             </form>
         </div>
 
