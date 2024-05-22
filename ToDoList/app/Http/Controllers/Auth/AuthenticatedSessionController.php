@@ -40,6 +40,7 @@ class AuthenticatedSessionController extends Controller
         return redirect()->intended('/todo');
     }
 
+
     /**
      * Destroy an authenticated session.
      */
@@ -52,5 +53,10 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/');
+    }
+
+    public function redirectPath()
+    {
+        return '/todo';
     }
 }

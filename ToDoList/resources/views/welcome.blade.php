@@ -17,7 +17,8 @@
       <section id="display">
         <div id="formSignUp">
             <header id="SignUpHeader">Signup</header>
-            <form action="#">
+            <form method="POST" action="{{ route('register') }}">
+                @csrf
                 <input type="text" placeholder="Full Name" required />
                 <input type="text" placeholder="Email" required />
                 <input type="password" placeholder="Password" required />
@@ -31,7 +32,8 @@
 
         <div id="formLogin">
             <header id="LoginHeader">Login</header>
-            <form action="#">
+            <form method="POST" action="{{ route('todo') }}">
+                @csrf
                 <input type="text" placeholder="Email" required />
                 <input type="password" placeholder="Password" required />
                 <a href="#">Forgot password?</a>

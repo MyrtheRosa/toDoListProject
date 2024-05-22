@@ -14,11 +14,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/todo', function () {
     return view('todo');
-});
-
-Route::get('/todo/timer', function () {
-    return view('todotimer');
-});
+})->middleware(['auth', 'verified'])->name('todo');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
