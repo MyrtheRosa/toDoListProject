@@ -81,13 +81,12 @@ function saveToCookie() {
     });
 
     const myJson = JSON.stringify(itemsToSave);
-    document.cookie =
-        "myCookie=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
+    document.cookie = "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
 }
 
 function loadFromCookie() {
-    const loadedCookie = getCookie("myCookie");
-    if ((loadFromCookie = getCookie("myCookie"))) {
+    const loadedCookie = getCookie("myTODOs");
+    if ((loadFromCookie = getCookie("myTODOs"))) {
         const todos = JSON.parse(loadedCookie);
         todos.forEach((task) => {
             console.log(task);
