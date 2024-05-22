@@ -9,7 +9,7 @@ Route::get('/', function () {
 
 Route::get('/todo', function () {
     return view('todo');
-})/*->middleware(['auth'])->name('todo')*/;
+})->middleware(['auth'])->name('todo');
 
 Route::get('/todo/timer', function () {
     return view('todotimer');
