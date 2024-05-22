@@ -8,133 +8,142 @@
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f0faff;
+    background-color: #e3f2;
 }
 
 #display {
     position: relative;
-    max-width: 470px;
+    max-width: 480px;
     width: 100%;
-    border-radius: 12px;
-    padding: 20px 30px 120px;
-    background: #4070f4;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 8px auto 0px;
+    background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
 }
 
-#formSignUp header {
-    font-size: 30px;
-    text-align: center;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
+#display #inputField {
+    position: relative;
+    height: 64px;
+    width: 100%;
 }
 
-#formLogin header {
-    font-size: 30px;
-    text-align: center;
-    color: #333;
-    opacity: 0.6;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#display.active #formLogin {
-    bottom: -15%;
-    border-radius: 35%;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-
-}
-
-#formLogin {
-    position: absolute;
-    left: 50%;
-    bottom: -86%;
-    transform: translateX(-50%);
-    width: calc(100% + 220px);
-    padding: 20px 140px;
-    border-radius: 50%;
+#inputField textarea {
     height: 100%;
-    background: #fff;
-    transition: all 0.6s ease;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 8px;
+    padding: 18px 45px 18px 15px;
+    border: 1px solid #ccc;
+    resize: none;
 }
 
-#display form {
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#inputField .note-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 24px;
+    color: #e3f2;
+}
+
+#inputField textarea:focus~.note-icon {
+    color: rgba(234, 118, 234, 0.434);
+}
+
+#display #toDoList {
+    max-height: 380px;
+    padding-right: 10px;
+    overflow-y: auto;
+}
+
+#toDoList #list {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
+    align-items: center;
+    list-style: none;
+    background-color: #e3f2;
+    padding: 20px 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: relative;
+    cursor: pointer;
 }
 
-#display.active #LoginHeader{
+#toDoList input {
+    height: 16px;
+    min-width: 16px;
+    accent-color: #e3f2;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#toDoList #task {
+    margin: 0 30px 0 15px;
+    word-break: break-all;
+}
+
+#list input:checked~#task {
+    text-decoration: line-through;
+}
+
+#toDoList #list i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    padding: 5px;
+    opacity: 0.6;
+    cursor: pointer;
+    display: none;
+}
+
+#toDoList #list:hover i {
+    display: inline-flex;
+}
+
+#toDoList #list i:hover {
     opacity: 1;
 }
 
-#display.active #SignUpHeader{
-    opacity: 0.6;
-}
-
-form input {
-    height: 60px;
-    outline: none;
-    border: none;
-    padding: 0 15px;
-    font-size: 16px;
-    font-weight: 400;
-    color: #333;
-    border-radius: 8px;
-    background: #fff;
-}
-
-form #checkbox {
+#display #pendingTasks {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    margin-top: 25px;
+
 }
 
-#formLogin input {
-    border: 1px solid #aaa;
+#pendingTasks span {
+    color: darkviolet;
 }
 
-#formLogin input:focus {
-    box-shadow: 0 1px 0 #ddd;
-}
-
-#checkbox input[type="checkbox"] {
-    height: 16px;
-    width: 16px;
-    accent-color: #fff;
-    cursor: pointer;
-}
-
-form #checkbox label {
-    cursor: pointer;
-    color: #fff;
-}
-
-form a {
-    color: #333;
-    text-decoration: none;
-}
-
-form a:hover {
-    text-decoration: underline;
-}
-
-form input[type="submit"] {
-    margin-top: 15px;
-    padding: none;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-}
-
-#formLogin input[type="submit"] {
-    background: #4070f4;
-    color: #fff;
+#pendingTasks #clearButton {
+    padding: 6px 12px;
+    outline: none;
     border: none;
+    background-color:#e3f2;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#pendingTasks #clearButton:hover {
+    background-color:rgba(234, 118, 234, 0.434);
+}
+
+@media screen and (max-width: 350px) {
+    #display{
+        padding: 25px 10px;
+    }
 }
