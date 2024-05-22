@@ -14,7 +14,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/todo', function () {
     return view('todo');
-});
+})->middleware(['auth']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
