@@ -54,9 +54,4 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
-
-    public function redirectPath()
-    {
-        return '/todo';
-    }
 }

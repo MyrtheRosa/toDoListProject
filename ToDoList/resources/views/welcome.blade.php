@@ -32,7 +32,7 @@
 
         <div id="formLogin">
             <header id="LoginHeader">Login</header>
-            <form method="POST" action="{{ route('todo') }}">
+            <form method="POST" action="{{ route('login') }}">
                 @csrf
                 <input type="text" placeholder="Email" required />
                 <input type="password" placeholder="Password" required />
