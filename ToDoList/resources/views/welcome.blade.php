@@ -10,7 +10,11 @@
 </head>
 
 <body>
-    <section id="display">
+    <section>
+      <img src="{{asset('assets/images/stars.png')}}" id="stars" />
+      <img src="{{asset('assets/images/moon.png')}}" id="moon" />
+      {{-- <img src="{{asset('assets/images/mountains_behind.png')}}" id="mountains_behind" /> --}}
+      <section id="display">
         <div id="formSignUp">
             <header id="SignUpHeader">Signup</header>
             <form action="#">
@@ -34,6 +38,8 @@
                 <input type="submit" value="Login" />
             </form>
         </div>
+      <img src="{{asset('assets/images/mountains_front.png')}}" id="mountains_front" />
+    </section>
 
         <script>
             const display = document.getElementById("display");
