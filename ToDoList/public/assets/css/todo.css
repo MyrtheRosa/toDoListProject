@@ -271,4 +271,15 @@ section img#mountains_front {
     width: 100%; /* Ensure each list item takes full width */
     text-align: left; /* Align text to the left */
     padding: 5px 0; /* Add padding for spacing between items */
+    display: flex; /* Enable flexbox layout */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+}
+
+.checkbox-container {
+    display: flex; /* Enable flexbox layout */
+    align-items: center; /* Align items vertically in the container */
+}
+
+.checkbox-container input[type="radio"] {
+    margin-left: -10px; /* Add some space between checkbox and text */
 }
