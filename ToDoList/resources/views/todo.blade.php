@@ -24,11 +24,11 @@
         <h5>Settings</h5>
         <div class="colors">
             <ol>
-                <li><input type="color" id="favcolor" value="#ff0000" disabled> Midnight Blue <input type="radio" name="selectColor" id="none" value="Midnight" checked></li>
-                <li><input type="color" id="favcolor" value="#ff0000" disabled> Sunshine <input type="radio" name="selectColor" value="Sunshine" id="none"></li>
-                <li><input type="color" id="favcolor" value="#ff0000" disabled> Pink Ivory <input type="radio" name="selectColor" value="Pink" id="none"></li>
-                <li><input type="color" id="favcolor" value="#ff0000" disabled> Forest Green <input type="radio" name="selectColor" value="Forest" id="none"></li>
-                <li><input type="color" id="favcolor" value="#ff0000" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none"></li>
+                <li><input type="color" id="favcolor" value="#0a3ca7" disabled> Midnight Blue <input type="radio" name="selectColor" id="none" value="Midnight" checked></li>
+                <li><input type="color" id="favcolor" value="#F9C93A" disabled> Sunshine <input type="radio" name="selectColor" value="Sunshine" id="none"></li>
+                <li><input type="color" id="favcolor" value="#F8AAF2" disabled> Pink Ivory <input type="radio" name="selectColor" value="Pink" id="none"></li>
+                <li><input type="color" id="favcolor" value="#76CB6E" disabled> Forest Green <input type="radio" name="selectColor" value="Forest" id="none"></li>
+                <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none"></li>
             </ol>
         </div>
     </div>
