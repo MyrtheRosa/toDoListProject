@@ -8,7 +8,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/todo', [TodoController::class, 'index'])->name('todo');
+Route::post('/todo', [TodoController::class, 'store'])->name('todo');
+Route::get('/todo', [TodoController::class, 'index'])->name('todo.get');
 
 Route::get('/todo/timer', function () {
     return view('todotimer');
