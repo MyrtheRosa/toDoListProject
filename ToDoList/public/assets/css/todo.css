@@ -51,11 +51,11 @@ textarea::-webkit-scrollbar {
     transform: translateY(-50%);
     pointer-events: none;
     font-size: 24px;
-    color: #e3f2;
+    color: rgba(51, 150, 255, 0.133);
 }
 
 #inputField textarea:focus ~ .note-icon {
-    color: rgba(234, 118, 234, 0.434);
+    color: rgba(10, 75, 143, 0.133);
 }
 
 #display #toDoList {
@@ -68,7 +68,7 @@ textarea::-webkit-scrollbar {
     display: flex;
     align-items: center;
     list-style: none;
-    background-color: #e3f2;
+    background-color: rgba(19, 115, 216, 0.133);
     padding: 20px 15px;
     border-radius: 8px;
     margin-top: 10px;
@@ -79,7 +79,7 @@ textarea::-webkit-scrollbar {
 #toDoList input {
     height: 16px;
     min-width: 16px;
-    accent-color: #e3f2;
+    accent-color: rgba(51, 180, 255, 0.133);
     pointer-events: none;
     cursor: pointer;
 }
@@ -122,14 +122,14 @@ textarea::-webkit-scrollbar {
 }
 
 #pendingTasks span {
-    color: darkviolet;
+    color: rgb(25, 109, 243);
 }
 
 #pendingTasks #clearButton {
     padding: 6px 12px;
     outline: none;
     border: none;
-    background-color: #e3f2;
+    background-color: rgba(51, 153, 255, 0.133);
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
@@ -138,7 +138,7 @@ textarea::-webkit-scrollbar {
 }
 
 #pendingTasks #clearButton:hover {
-    background-color: rgba(234, 118, 234, 0.434);
+    background-color: rgba(118, 153, 234, 0.434);
 }
 
 @media screen and (max-width: 350px) {
