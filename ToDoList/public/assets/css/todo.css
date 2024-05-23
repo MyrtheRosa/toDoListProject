@@ -89,7 +89,7 @@ textarea::-webkit-scrollbar {
     word-break: break-all;
 }
 
-#list input:checked ~ #task {
+#list input:checked ~ #iteminfo #task {
     text-decoration: line-through;
 }
 

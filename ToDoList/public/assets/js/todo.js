@@ -82,7 +82,7 @@ function saveToCookie() {
     const itemsToSave = [];
     toDo.forEach((item) => {
         itemsToSave.push({
-            title: item.querySelector("h1").innerHTML,
+            title: item.querySelector("h5").innerHTML,
             para: item.querySelector("p").innerHTML,
             checked: item.querySelector("input").checked,
         });
