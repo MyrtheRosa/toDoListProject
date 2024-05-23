@@ -2,14 +2,13 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/todo', function () {
-    return view('todo');
-})->middleware(['auth'])->name('todo');
+Route::get('/todo', [TodoController::class, 'store'])->name('todo');
 
 Route::get('/todo/timer', function () {
     return view('todotimer');
