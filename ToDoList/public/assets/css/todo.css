@@ -292,7 +292,7 @@ input[type="radio"] {
     width: 30px;
     height: 30px;
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 #favcolor::-webkit-color-swatch {
     border-radius: 50%;
