@@ -242,15 +242,16 @@ section img#mountains_front {
     height: 25vh;
     z-index: 5;
     background-color: white;
+    color: #0323c1;
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
-    border: #000 dashed 2px;
+    /* border: #000 dashed 2px; */
 }
 
 .menuDiv h5 {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    border-bottom: 2px #000 dashed;
+    border-bottom: 2px #0323c1 dashed;
 }
