@@ -26,7 +26,7 @@ function inputOnClick(event) {
     let inputTitleVal = inputTitleField.value.trim(); //Trim function removes space of front and back of the inputed value
 
     //if enter button is clicked and inputed value length is greater than 0
-    if (event.key === "Enter" && inputVal.length > 0) {
+    if (event.key === "Enter" && inputTitleVal.length > 0) {
         let liTag = `<li id="list" class="pending"  onclick="handleStatus(this)">
         <input type="checkbox"/>
         <h1 id="task">${inputTitleVal}</h1>
@@ -41,6 +41,7 @@ function inputOnClick(event) {
 }
 
 inputField.addEventListener("keyup", inputOnClick);
+inputTitleField.addEventListener("keyup", inputOnClick);
 
 //checking and unchecking the checkbox while we click on a task
 function handleStatus(e) {
