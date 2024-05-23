@@ -26,10 +26,11 @@ function inputOnClick(event) {
     let inputTitleVal = inputTitleField.value.trim(); //Trim function removes space of front and back of the inputed value
 
     //if enter button is clicked and inputed value length is greater than 0
-    if (event.key === "Enter" && inputVal.length > 2 && inputTitleVal > 2) {
+    if (event.key === "Enter" && inputVal.length > 0) {
         let liTag = `<li id="list" class="pending"  onclick="handleStatus(this)">
         <input type="checkbox"/>
-        <span id="task">${inputVal}</span>
+        <h1 id="task">${inputTitleVal}</h1>
+        <p id="task">${inputVal}</p>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
         toDoList.insertAdjacentHTML("beforeend", liTag); //insert liTag into div
@@ -77,7 +78,8 @@ function saveToCookie() {
     const itemsToSave = [];
     toDo.forEach((item) => {
         itemsToSave.push({
-            title: item.querySelector("span").innerHTML,
+            title: item.querySelector("h1").innerHTML,
+            para: item.querySelector("p").innerHTML,
             checked: item.querySelector("input").checked,
         });
     });
@@ -96,7 +98,8 @@ function loadFromCookie() {
                 task.checked ? "" : "pending"
             }"  onclick="handleStatus(this)">
         <input type="checkbox" ${task.checked ? "checked" : ""} />
-        <span id="task">${task.title}</span>
+        <h1 id="task">${task.title}</h1>
+        <p id="task">${task.para}</p>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
             toDoList.insertAdjacentHTML("beforeend", liTag);
