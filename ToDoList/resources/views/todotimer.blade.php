@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List || HTML CSS JavaScript</title>
+    <title>ToDo List Timed</title>
 
     <link rel="stylesheet" href="{{ asset('assets/css/todotimer.css') }}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
