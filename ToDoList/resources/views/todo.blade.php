@@ -29,7 +29,7 @@
         <div id="inputField">
             <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
         </div>
-        <button>Aesthetic Warning</button>
+        {{-- <button>Aesthetic Warning</button> --}}
         <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span>You have <span id="pendingNum">no </span> tasks pending. </span>
