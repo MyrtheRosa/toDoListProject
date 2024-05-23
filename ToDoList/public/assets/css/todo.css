@@ -242,7 +242,7 @@ section img#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    height: 35vh;
+    height: 45vh;
     z-index: 5;
     background-color: white;
     color: #0323c1;
@@ -280,6 +280,7 @@ section img#mountains_front {
 
 input[type="radio"] {
     margin-left: -10px;
+    cursor: pointer;
 }
 
 #favcolor {
