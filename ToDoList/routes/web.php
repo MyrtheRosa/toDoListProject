@@ -12,7 +12,7 @@ Route::get('/todo', [TodoController::class, 'store'])->name('todo');
 
 Route::get('/todo/timer', function () {
     return view('todotimer');
-});
+})->middleware(['auth'])->name('todotimed');
 
 
 Route::middleware('auth')->group(function () {
