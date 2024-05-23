@@ -212,7 +212,7 @@ section img#mountains_front {
     z-index: 6;
     background: transparent;
     border: none;
-    transition: all ease-in-out 0.15s;
+    transition: right 1s ease-in-out, color 0.3s ease-in-out;
 }
 
 #settings:hover {
@@ -231,7 +231,7 @@ section img#mountains_front {
 
 .menuDiv {
     top: 10px;
-    right: 10px;
+    right: -300px;
     position: absolute;
     align-items: center;
     display: flex;
@@ -242,24 +242,5 @@ section img#mountains_front {
     background-color: white;
     box-shadow: 0 0 15px #000;
     border-radius: 15px;
-    transition: all ease-in-out 0.15s;
-}
-
-@keyframes moveIcon {
-    0% {
-        #settings {
-            transform: translate(10);
-        }
-        .menuDiv {
-            transform: translate(-300px);
-        }
-    }
-    100% {
-        #settings {
-            transform: translate(270px);
-        }
-        .menuDiv {
-            transform: translate(10px);
-        }
-    }
+    transition: right 1s ease-in-out;
 }

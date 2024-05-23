@@ -5,10 +5,16 @@ const pendingNum = document.getElementById("pendingNum");
 const clearButton = document.getElementById("clearButton");
 
 const settings = document.getElementById("settings");
-const settingDiv = document.getElementsByClassName("menuDiv");
+const settingDiv = document.querySelector(".menuDiv");
 
-settings.addEventListener(onclick, function () {
-    settingDiv.style.Color = "Blue";
+settings.addEventListener("click", function () {
+    if (settingDiv.style.right === "10px") {
+        settingDiv.style.right = "-300px";
+        settings.style.right = "10px";
+    } else {
+        settingDiv.style.right = "10px";
+        settings.style.right = "270px";
+    }
 });
 
 //We will call this function while adding, deleting and checking/unchecking the task
