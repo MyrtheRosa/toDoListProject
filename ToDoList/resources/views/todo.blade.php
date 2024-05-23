@@ -18,7 +18,6 @@
   <span class="badge text-bg-light">Themes</span>
 </button>
     <div id="display">
-
         <div id="inputField">
             <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
             <i class="uil uil-notes note-icon"></i>
@@ -31,7 +30,7 @@
         <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span>You have <span id="pendingNum">no </span> tasks pending. </span>
-            <button id="clearButton">Clear All</button>
+            <button id="clearButton" disabled>Clear All</button>
         </div>
     </div>
 

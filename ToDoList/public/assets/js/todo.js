@@ -13,9 +13,11 @@ function allTasks() {
     let allLists = document.querySelectorAll("#list");
     if (allLists.length > 0) {
         toDoList.style.marginTop = "20px";
+        clearButton.disabled = false;
         clearButton.style.pointerEvents = "auto";
         return;
     }
+    clearButton.disabled = true;
     toDoList.style.marginTop = "0px";
     clearButton.style.pointerEvents = "none";
 }
