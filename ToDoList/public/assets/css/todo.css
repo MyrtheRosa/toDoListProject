@@ -235,9 +235,9 @@ section img#mountains_front {
     top: 10px;
     right: -300px;
     position: absolute;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Align items to the start (left) */
     width: 250px;
     height: 25vh;
     z-index: 5;
@@ -246,6 +246,7 @@ section img#mountains_front {
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
+    padding: 10px; /* Add padding if needed */
 }
 
 .menuDiv h5 {
@@ -253,15 +254,21 @@ section img#mountains_front {
     padding-top: 5px;
     padding-bottom: 10px;
     border-bottom: 2px #0323c1 dashed;
+    text-align: left; /* Ensure h5 is aligned to the left */
+}
+
+.colors {
+    width: 100%; /* Ensure the colors container takes full width */
+}
+
+.colors ol {
+    padding-left: 20px; /* Adjust padding as needed for indentation */
+    margin: 0;
 }
 
 .colors li {
     list-style: none;
-}
-
-.colors {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
+    width: 100%; /* Ensure each list item takes full width */
+    text-align: left; /* Align text to the left */
+    padding: 5px 0; /* Add padding for spacing between items */
 }

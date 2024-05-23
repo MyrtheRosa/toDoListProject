@@ -24,11 +24,11 @@
         <h5>Settings</h5>
         <div class="colors">
             <ol>
-                <li>Midnight Blue</li>
-                <li>Sunshine</li>
-                <li>Pink Ivory</li>
-                <li>Forest Green</li>
-                <li>Caramel Machiato</li>
+                <li>Midnight Blue <input type="checkbox" name="selectColor" id="none"></li>
+                <li>Sunshine <input type="checkbox" name="selectColor" id="none"></li>
+                <li>Pink Ivory <input type="checkbox" name="selectColor" id="none"></li>
+                <li>Forest Green <input type="checkbox" name="selectColor" id="none"></li>
+                <li>Caramel Machiato <input type="checkbox" name="selectColor" id="none"></li>
             </ol>
         </div>
     </div>
