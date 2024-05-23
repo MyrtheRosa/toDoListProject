@@ -4,6 +4,13 @@ const toDoList = document.getElementById("toDoList");
 const pendingNum = document.getElementById("pendingNum");
 const clearButton = document.getElementById("clearButton");
 
+const settings = document.getElementById("settings");
+const settingDiv = document.getElementsByClassName("menuDiv");
+
+settings.addEventListener(onclick, function () {
+    settingDiv.style.Color = "Blue";
+});
+
 //We will call this function while adding, deleting and checking/unchecking the task
 function allTasks() {
     let tasks = document.querySelectorAll(".pending");
