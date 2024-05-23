@@ -37,6 +37,7 @@ function inputOnClick(event) {
         inputField.value = ""; //removing value from input field
         allTasks();
         saveToCookie();
+        inputTitleField.value = "";
     }
 }
 
