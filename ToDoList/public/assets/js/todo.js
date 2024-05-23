@@ -47,7 +47,7 @@ function inputOnClick(event) {
         let liTag = `<li id="list" class="pending"  onclick="handleStatus(this)">
         <input type="checkbox"/>
         <div id="iteminfo">
-            <h5 id="task"><b>${inputTitleVal}</b></h5>
+            <h3 id="task"><b>${inputTitleVal}</b></h3>
             <p id="task">${inputVal}</p>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
@@ -99,7 +99,7 @@ function saveToCookie() {
     const itemsToSave = [];
     toDo.forEach((item) => {
         itemsToSave.push({
-            title: item.querySelector("h5").innerHTML,
+            title: item.querySelector("h3").innerHTML,
             para: item.querySelector("p").innerHTML,
             checked: item.querySelector("input").checked,
         });
@@ -120,7 +120,7 @@ function loadFromCookie() {
             }"  onclick="handleStatus(this)">
         <input type="checkbox" ${task.checked ? "checked" : ""} />
         <div id="iteminfo">
-            <h5 id="task"><b>${task.title}</b></h5>
+            <h3 id="task"><b>${task.title}</b></h3>
             <p id="task">${task.para}</p>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
