@@ -26,7 +26,6 @@
         <br>
         <div id="inputField">
             <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
-            <i class="uil uil-notes note-icon"></i>
         </div>
         <button></button>
         <ul id="toDoList"></ul>

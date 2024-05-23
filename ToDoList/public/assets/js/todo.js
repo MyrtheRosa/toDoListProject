@@ -37,9 +37,9 @@ function inputOnClick(event) {
     </li>`;
         toDoList.insertAdjacentHTML("beforeend", liTag); //insert liTag into div
         inputField.value = ""; //removing value from input field
+        inputTitleField.value = ""; //removing value from input field
         allTasks();
         saveToCookie();
-        inputTitleField.value = "";
     }
 }
 
