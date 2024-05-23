@@ -11,8 +11,10 @@ settings.addEventListener("click", function () {
     if (settingDiv.style.right === "10px") {
         settingDiv.style.right = "-300px";
         settings.style.right = "10px";
+        settings.style.color = "gray";
     } else {
         settingDiv.style.right = "10px";
+        settings.style.color = "darkgray";
         settings.style.right = "270px";
     }
 });
