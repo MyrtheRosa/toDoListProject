@@ -12,8 +12,8 @@
 </head>
 <body>
     <section>
-    <img src="" id="stars" />
-    <img src="" id="moon" />
+    <div id="stars"></div>
+    <div id="moon"></div>
     <img src="{{asset('assets/images/mountains_front.png')}}" id="mountains_front" />
   <button class="btn btn-secondary align-content-center align-self-end">
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
