@@ -29,8 +29,10 @@ function inputOnClick(event) {
     if (event.key === "Enter" && inputTitleVal.length > 0) {
         let liTag = `<li id="list" class="pending"  onclick="handleStatus(this)">
         <input type="checkbox"/>
-        <h1 id="task">${inputTitleVal}</h1>
-        <p id="task">${inputVal}</p>
+        <div id="iteminfo">
+            <h5 id="task"><b>${inputTitleVal}</b></h5>
+            <p id="task">${inputVal}</p>
+        </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
         toDoList.insertAdjacentHTML("beforeend", liTag); //insert liTag into div
@@ -100,8 +102,10 @@ function loadFromCookie() {
                 task.checked ? "" : "pending"
             }"  onclick="handleStatus(this)">
         <input type="checkbox" ${task.checked ? "checked" : ""} />
-        <h1 id="task">${task.title}</h1>
-        <p id="task">${task.para}</p>
+        <div id="iteminfo">
+            <h5 id="task"><b>${task.title}</b></h5>
+            <p id="task">${task.para}</p>
+        </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
             toDoList.insertAdjacentHTML("beforeend", liTag);
