@@ -23,11 +23,13 @@
     <div class="menuDiv">
         <h5>Settings</h5>
         <div class="colors">
-            1
-            2
-            3
-            4
-
+            <ol>
+                <li>Midnight Blue</li>
+                <li>Sunshine</li>
+                <li>Pink Ivory</li>
+                <li>Forest Green</li>
+                <li>Caramel Machiato</li>
+            </ol>
         </div>
     </div>
     <div id="display">

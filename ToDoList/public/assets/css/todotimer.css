@@ -1,5 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
+:root {
+    --main-text: rgb(25, 109, 243);
+    --main-color: rgba(19, 115, 216, 0.133);
+    --main-color-hover: rgba(17, 91, 171, 0.133);
+    --grad1: #2b1055;
+    --grad2: #4070f4;
+    --note: rgba(51, 150, 255, 0.133);
+    --main-img: url(../images/stars.png);
+    --main-obj: url(../images/moon.png);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,20 +19,20 @@
 }
 
 body {
-    width: 100%;
-    background-color: #e3f2;
-    display: grid;
-    grid-template-columns: 30% 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--grad1), var(--grad2));
 }
 
 #display {
-    position: relative;
+    position: absolute;
     max-width: 480px;
     width: 100%;
     border-radius: 8px;
     padding: 25px;
     margin: 8px auto 0px;
-    background-color: #f6c2fe;
+    background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -54,11 +65,11 @@ textarea::-webkit-scrollbar {
     transform: translateY(-50%);
     pointer-events: none;
     font-size: 24px;
-    color: #e3f2;
+    color: var(--note);
 }
 
 #inputField textarea:focus ~ .note-icon {
-    color: rgba(234, 118, 234, 0.434);
+    color: var(--main-text);
 }
 
 #display #toDoList {
@@ -71,7 +82,7 @@ textarea::-webkit-scrollbar {
     display: flex;
     align-items: center;
     list-style: none;
-    background-color: #e3f2;
+    background-color: var(--main-color);
     padding: 20px 15px;
     border-radius: 8px;
     margin-top: 10px;
@@ -82,7 +93,7 @@ textarea::-webkit-scrollbar {
 #toDoList input {
     height: 16px;
     min-width: 16px;
-    accent-color: #e3f2;
+    accent-color: var(--main-color);
     pointer-events: none;
     cursor: pointer;
 }
@@ -92,7 +103,7 @@ textarea::-webkit-scrollbar {
     word-break: break-all;
 }
 
-#list input:checked ~ #task {
+#list input:checked ~ #iteminfo #task {
     text-decoration: line-through;
 }
 
@@ -125,14 +136,14 @@ textarea::-webkit-scrollbar {
 }
 
 #pendingTasks span {
-    color: darkviolet;
+    color: var(--main-text);
 }
 
 #pendingTasks #clearButton {
     padding: 6px 12px;
     outline: none;
     border: none;
-    background-color: #e3f2;
+    background-color: var(--main-color);
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
@@ -141,11 +152,105 @@ textarea::-webkit-scrollbar {
 }
 
 #pendingTasks #clearButton:hover {
-    background-color: rgba(234, 118, 234, 0.434);
+    background-color: var(--main-color-hover);
 }
 
 @media screen and (max-width: 350px) {
     #display {
         padding: 25px 10px;
     }
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section div#stars {
+    position: absolute;
+    background-image: var(--main-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+section div#moon {
+    position: absolute;
+    background-image: var(--main-obj);
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: screen;
+    width: 100%;
+    height: 100vh;
+}
+section img#mountains_front {
+    position: absolute;
+}
+
+#settings {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: gray;
+    z-index: 6;
+    background: transparent;
+    border: none;
+    transition: right 1s ease-in-out, color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+}
+
+#settings:hover {
+    color: darkgray;
+    animation: setting 2s infinite;
+}
+
+@keyframes setting {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.menuDiv {
+    text-align: center;
+    top: 10px;
+    right: -300px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 25vh;
+    z-index: 5;
+    background-color: white;
+    color: #0323c1;
+    box-shadow: 0 0 15px #a9a9a9;
+    border-radius: 15px;
+    transition: right 1s ease-in-out;
+}
+
+.menuDiv h5 {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px #0323c1 dashed;
 }
