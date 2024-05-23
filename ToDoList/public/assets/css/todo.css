@@ -10,6 +10,7 @@
     --note: rgba(51, 150, 255, 0.815);
     --main-img: url(../images/stars.png);
     --main-obj: url(../images/moon.png);
+    --main-obj2: url(../images/mountains_front.png);
 }
 
 * {
@@ -212,8 +213,15 @@ section div#moon {
     width: 100%;
     height: 100vh;
 }
-section img#mountains_front {
+section div#mountains_front {
+    opacity: 1;
+    background-image: var(--main-obj2);
     position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
 }
 
 #settings {

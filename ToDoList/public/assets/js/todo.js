@@ -19,6 +19,246 @@ settings.addEventListener("click", function () {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    let themeColor = document.querySelector(
+        'input[name="selectColor"]:checked'
+    );
+    console.log(themeColor.value);
+
+    // Voeg een event listener toe aan elke radio button
+    document
+        .querySelectorAll('input[name="selectColor"]')
+        .forEach(function (radio) {
+            radio.addEventListener("change", function () {
+                themeColor = document.querySelector(
+                    'input[name="selectColor"]:checked'
+                );
+                console.log(themeColor.value);
+                switch (themeColor.value) {
+                    // Midnight Theme
+                    case "Midnight":
+                        document.documentElement.style.setProperty(
+                            "--main-color",
+                            "rgba(20, 88, 233, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-hover",
+                            "rgb(25, 109, 243)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-text",
+                            "rgb(25, 109, 243)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--toDO-text",
+                            "white"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad1",
+                            "#2b1055"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad2",
+                            "#4070f4"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--note",
+                            "rgba(51, 150, 255, 0.815)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-img",
+                            "url(../images/stars.png)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj",
+                            "url(../images/moon.png)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj2",
+                            "url(../images/mountains_front.png)"
+                        );
+                        break;
+
+                    // SunShine Theme
+                    case "Sunshine":
+                        document.documentElement.style.setProperty(
+                            "--main-color",
+                            "rgba(233, 198, 20, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-hover",
+                            "rgb(243, 167, 25)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-text",
+                            "rgb(243, 196, 25)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--toDO-text",
+                            "white"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad1",
+                            "#6eeaf8"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad2",
+                            "#1eb7c5"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--note",
+                            "rgba(211, 170, 24, 0.815)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-img",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj2",
+                            "url(../images/sunshine.jpg)"
+                        );
+                        break;
+
+                    // Pink Theme
+                    case "Pink":
+                        document.documentElement.style.setProperty(
+                            "--main-color",
+                            "rgba(230, 68, 244, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-hover",
+                            "rgb(166, 71, 234)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-text",
+                            "rgb(201, 60, 240)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--toDO-text",
+                            "white"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad1",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad2",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--note",
+                            "rgba(184, 73, 206, 0.815)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-img",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj2",
+                            "url(../images/pink.jpg)"
+                        );
+                        break;
+
+                    // Forest Theme
+                    case "Forest":
+                        document.documentElement.style.setProperty(
+                            "--main-color",
+                            "rgba(46, 207, 51, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-hover",
+                            "rgb(47, 171, 63)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-text",
+                            "rgb(64, 155, 78)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--toDO-text",
+                            "white"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad1",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad2",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--note",
+                            "rgba(37, 157, 45, 0.815)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-img",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj2",
+                            "url(../images/forest.jpg)"
+                        );
+                        break;
+
+                    // Caramel Theme
+                    case "Caramel":
+                        document.documentElement.style.setProperty(
+                            "--main-color",
+                            "rgba(216, 199, 132, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-hover",
+                            "rgb(156, 137, 73)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-text",
+                            "rgb(214, 186, 96)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--toDO-text",
+                            "white"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad1",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--grad2",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--note",
+                            "rgba(230, 183, 122, 0.815)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-img",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj",
+                            "none"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-obj2",
+                            "url(../images/caramel.jpg)"
+                        );
+                        break;
+                }
+            });
+        });
+});
+
 //We will call this function while adding, deleting and checking/unchecking the task
 function allTasks() {
     let tasks = document.querySelectorAll(".pending");
