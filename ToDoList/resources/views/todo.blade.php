@@ -24,11 +24,11 @@
         <h5>Settings</h5>
         <div class="colors">
             <ol>
-                <li>Midnight Blue <input type="radio" name="selectColor" id="none"></li>
-                <li>Sunshine <input type="radio" name="selectColor" id="none"></li>
-                <li>Pink Ivory <input type="radio" name="selectColor" id="none"></li>
-                <li>Forest Green <input type="radio" name="selectColor" id="none"></li>
-                <li>Caramel Machiato <input type="radio" name="selectColor" id="none"></li>
+                <li><input type="color" id="favcolor" value="#ff0000" disabled> Midnight Blue <input type="radio" name="selectColor" id="none"></li>
+                <li><input type="color" id="favcolor" value="#ff0000" disabled> Sunshine <input type="radio" name="selectColor" id="none"></li>
+                <li><input type="color" id="favcolor" value="#ff0000" disabled> Pink Ivory <input type="radio" name="selectColor" id="none"></li>
+                <li><input type="color" id="favcolor" value="#ff0000" disabled> Forest Green <input type="radio" name="selectColor" id="none"></li>
+                <li><input type="color" id="favcolor" value="#ff0000" disabled> Caramel Machiato <input type="radio" name="selectColor" id="none"></li>
             </ol>
         </div>
     </div>
