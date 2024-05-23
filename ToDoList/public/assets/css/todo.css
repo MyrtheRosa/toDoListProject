@@ -84,6 +84,7 @@ textarea::-webkit-scrollbar {
     align-items: center;
     list-style: none;
     background-color: var(--main-color);
+    color: var(--toDo-text);
     padding: 20px 15px;
     border-radius: 8px;
     margin-top: 10px;
