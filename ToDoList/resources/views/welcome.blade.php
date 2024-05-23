@@ -17,7 +17,7 @@
       <section id="display">
         <div id="formSignUp">
             <header id="SignUpHeader">Signup</header>
-            <form method="POST" action="{{ route('register') }}">
+            <form method="POST" action="{{ route('todo') }}">
                 @csrf
                 <input type="text" placeholder="Full Name" required />
                 <input type="text" placeholder="Email" required />
