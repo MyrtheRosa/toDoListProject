@@ -7,6 +7,8 @@
     --grad1: #2b1055;
     --grad2: #4070f4;
     --note: rgba(51, 150, 255, 0.133);
+    --main-img: url(../images/stars.png);
+    --main-obj: url(../images/moon.png);
 }
 
 * {
@@ -177,11 +179,18 @@ section img {
     pointer-events: none;
 }
 
+section img#stars {
+    background-image: var(--main-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 section img#moon {
+    background-image: var(--main-obj);
+    background-repeat: no-repeat;
+    background-size: cover;
     mix-blend-mode: screen;
 }
 section img#mountains_front {
     position: absolute;
-    opacity: 0.4;
-    z-index: 10;
 }
