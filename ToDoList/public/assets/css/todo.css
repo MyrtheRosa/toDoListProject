@@ -237,16 +237,16 @@ section img#mountains_front {
     position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the start (left) */
+    align-items: flex-start;
     width: 250px;
-    height: 25vh;
+    height: 35vh;
     z-index: 5;
     background-color: white;
     color: #0323c1;
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
-    padding: 10px; /* Add padding if needed */
+    padding: 10px;
 }
 
 .menuDiv h5 {
@@ -254,32 +254,32 @@ section img#mountains_front {
     padding-top: 5px;
     padding-bottom: 10px;
     border-bottom: 2px #0323c1 dashed;
-    text-align: left; /* Ensure h5 is aligned to the left */
+    text-align: left;
 }
 
 .colors {
-    width: 100%; /* Ensure the colors container takes full width */
+    width: 100%;
 }
 
 .colors ol {
-    padding-left: 20px; /* Adjust padding as needed for indentation */
+    padding-left: 20px;
     margin: 0;
 }
 
 .colors li {
     list-style: none;
-    width: 100%; /* Ensure each list item takes full width */
-    text-align: left; /* Align text to the left */
-    padding: 5px 0; /* Add padding for spacing between items */
-    display: flex; /* Enable flexbox layout */
-    justify-content: space-between; /* Distribute items evenly along the main axis */
+    width: 100%;
+    text-align: left;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
 }
 
 .checkbox-container {
-    display: flex; /* Enable flexbox layout */
-    align-items: center; /* Align items vertically in the container */
+    display: flex;
+    align-items: center;
 }
 
 .checkbox-container input[type="radio"] {
-    margin-left: -10px; /* Add some space between checkbox and text */
+    margin-left: -10px;
 }
