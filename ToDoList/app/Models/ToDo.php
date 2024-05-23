@@ -13,5 +13,6 @@ class ToDo extends Model
         'title',
         'message',
         'time',
+        'tags',
     ];
 }
