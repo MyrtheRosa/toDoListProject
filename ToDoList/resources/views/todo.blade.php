@@ -20,6 +20,11 @@
     <div id="display">
 
         <div id="inputField">
+            <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
+            <i class="uil uil-notes note-icon"></i>
+        </div>
+        <br>
+        <div id="inputField">
             <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
             <i class="uil uil-notes note-icon"></i>
         </div>

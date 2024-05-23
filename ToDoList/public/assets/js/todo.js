@@ -1,4 +1,5 @@
 const inputField = document.getElementById("inputTextArea");
+const inputTitleField = document.getElementById("inputTitleArea");
 const toDoList = document.getElementById("toDoList");
 const pendingNum = document.getElementById("pendingNum");
 const clearButton = document.getElementById("clearButton");
@@ -22,9 +23,10 @@ function allTasks() {
 // console.log(inputField, toDoList, pendingNum, clearButton);
 function inputOnClick(event) {
     let inputVal = inputField.value.trim(); //Trim function removes space of front and back of the inputed value
+    let inputTitleVal = inputTitleField.value.trim(); //Trim function removes space of front and back of the inputed value
 
     //if enter button is clicked and inputed value length is greater than 0
-    if (event.key === "Enter" && inputVal.length > 0) {
+    if (event.key === "Enter" && inputVal.length > 2 && inputTitleVal > 2) {
         let liTag = `<li id="list" class="pending"  onclick="handleStatus(this)">
         <input type="checkbox"/>
         <span id="task">${inputVal}</span>
