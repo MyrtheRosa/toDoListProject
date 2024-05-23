@@ -3,10 +3,10 @@
 :root {
     --main-text: rgb(25, 109, 243);
     --main-color: rgba(20, 88, 233, 0.719);
-    --main-color-hover: rgba(5, 74, 223, 0.845);
+    --main-color-hover: rgb(25, 109, 243);
     --grad1: #2b1055;
     --grad2: #4070f4;
-    --note: rgba(51, 150, 255, 0.133);
+    --note: rgba(51, 150, 255, 0.815);
     --main-img: url(../images/stars.png);
     --main-obj: url(../images/moon.png);
 }
@@ -144,6 +144,7 @@ textarea::-webkit-scrollbar {
     outline: none;
     border: none;
     background-color: var(--main-color);
+    color: white;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
