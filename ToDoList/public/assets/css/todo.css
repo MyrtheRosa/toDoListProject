@@ -231,6 +231,7 @@ section img#mountains_front {
 }
 
 .menuDiv {
+    text-align: center;
     top: 10px;
     right: -300px;
     position: absolute;
@@ -244,4 +245,12 @@ section img#mountains_front {
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
+    border: #000 dashed 2px;
+}
+
+.menuDiv h5 {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-bottom: 2px #000 dashed;
 }

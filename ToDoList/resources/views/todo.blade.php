@@ -22,7 +22,6 @@
     </button>
     <div class="menuDiv">
         <h5>Settings</h5>
-        <hr>
         <div class="colors">
             1
             2
