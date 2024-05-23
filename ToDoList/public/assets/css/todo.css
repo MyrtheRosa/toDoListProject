@@ -277,11 +277,6 @@ section img#mountains_front {
     justify-content: space-between;
 }
 
-.checkbox-container {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-container input[type="radio"] {
+input[type="radio"] {
     margin-left: -10px;
 }
