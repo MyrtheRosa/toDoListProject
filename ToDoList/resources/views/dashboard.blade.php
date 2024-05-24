@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Todo Selector</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/selected.css') }}">
+    <title>Keuze Menu</title>
 </head>
 <body>
-    <section>
-        <!-- // -->
-    </section>
+    <div class="selectors">
+        <div class="moon"></div>
+        <div class="container1">
+            <img src="{{asset('assets/images/todotimer.jpeg')}}" alt="">
+            <h1>ToDo list with timer</h1>
+        </div>
+        <div class="container2">
+            <img src="{{asset('assets/images/todonotime.jpg')}}" alt="">
+            <h1>ToDo list without timer</h1>
+        </div>
+    </div>
 </body>
 </html>

@@ -11,6 +11,11 @@ Route::get('/', function () {
 Route::post('/todo', [TodoController::class, 'store'])->name('todo');
 Route::get('/todo', [TodoController::class, 'index'])->name('todo.get');
 
+
+Route::get('/keuze', function() {
+    return view('dashboard');
+})->name('keuze');
+
 Route::get('/todo/timer', function () {
     return view('todotimer');
 })/*->middleware(['auth'])->name('todotimed')*/;

@@ -24,6 +24,6 @@ class TodoController extends Controller
 
     public function store(Request $request) {
         // Handle the request...
-        return redirect()->route('todo.get');
+        return redirect()->route('keuze');
     }
 }
