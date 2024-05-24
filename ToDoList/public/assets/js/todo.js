@@ -127,15 +127,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     case "Pink":
                         document.documentElement.style.setProperty(
                             "--main-color",
-                            "rgba(230, 68, 244, 0.719)"
+                            "#f29de1"
                         );
                         document.documentElement.style.setProperty(
                             "--main-color-hover",
-                            "rgb(166, 71, 234)"
+                            "rgb(255, 88, 252)"
                         );
                         document.documentElement.style.setProperty(
                             "--main-text",
-                            "rgb(201, 60, 240)"
+                            "rgb(212, 79, 219)"
                         );
                         document.documentElement.style.setProperty(
                             "--toDO-text",
@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
                         document.documentElement.style.setProperty(
                             "--note",
-                            "rgba(184, 73, 206, 0.815)"
+                            "rgba(228, 109, 255, 0.815)"
                         );
                         document.documentElement.style.setProperty(
                             "--main-img",
@@ -207,7 +207,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
                         document.documentElement.style.setProperty(
                             "--main-obj2",
-                            "url(../images/forest.jpg)"
+                            "url(../images/forest.jpeg)"
                         );
                         break;
 
