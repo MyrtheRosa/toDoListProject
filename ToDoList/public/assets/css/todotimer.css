@@ -1,14 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
 
 :root {
+    --toDo-text: white;
     --main-text: rgb(25, 109, 243);
-    --main-color: rgba(19, 115, 216, 0.133);
-    --main-color-hover: rgba(17, 91, 171, 0.133);
+    --main-color: rgba(20, 88, 233, 0.719);
+    --main-color-hover: rgb(25, 109, 243);
     --grad1: #2b1055;
     --grad2: #4070f4;
-    --note: rgba(51, 150, 255, 0.133);
+    --note: rgba(51, 150, 255, 0.815);
     --main-img: url(../images/stars.png);
     --main-obj: url(../images/moon.png);
+    --main-obj2: url(../images/mountains_front.png);
 }
 
 * {
@@ -19,6 +21,7 @@
 }
 
 body {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,17 +75,26 @@ textarea::-webkit-scrollbar {
     color: var(--main-text);
 }
 
-#display #toDoList {
-    max-height: 380px;
-    padding-right: 10px;
-    overflow-y: auto;
+#toDoList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#toDoList {
+    padding-left: -2rem !important;
 }
 
 #toDoList #list {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
     display: flex;
     align-items: center;
     list-style: none;
     background-color: var(--main-color);
+    color: var(--toDo-text);
     padding: 20px 15px;
     border-radius: 8px;
     margin-top: 10px;
@@ -113,7 +125,7 @@ textarea::-webkit-scrollbar {
     right: 15px;
     transform: translateY(-50%);
     font-size: 24px;
-    color: white;
+    color: var(--toDo-text);
     padding: 5px;
     opacity: 0.6;
     cursor: pointer;
@@ -144,11 +156,13 @@ textarea::-webkit-scrollbar {
     outline: none;
     border: none;
     background-color: var(--main-color);
+    color: white;
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
     pointer-events: none;
     white-space: nowrap;
+    transition: all ease-in-out 0.2s;
 }
 
 #pendingTasks #clearButton:hover {
@@ -200,8 +214,15 @@ section div#moon {
     width: 100%;
     height: 100vh;
 }
-section img#mountains_front {
+section div#mountains_front {
+    opacity: 1;
+    background-image: var(--main-obj2);
     position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
 }
 
 #settings {
@@ -235,17 +256,18 @@ section img#mountains_front {
     top: 10px;
     right: -300px;
     position: absolute;
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 250px;
-    height: 25vh;
+    height: 40vh;
     z-index: 5;
     background-color: white;
     color: #0323c1;
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
+    padding: 10px;
 }
 
 .menuDiv h5 {
@@ -253,4 +275,52 @@ section img#mountains_front {
     padding-top: 5px;
     padding-bottom: 10px;
     border-bottom: 2px #0323c1 dashed;
+    text-align: left;
 }
+
+.colors {
+    width: 100%;
+}
+
+.colors ol {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.colors li {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    margin-left: -10px;
+    cursor: pointer;
+}
+
+#favcolor {
+    margin-left: -20px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    border: none;
+}
+#favcolor::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+#favcolor::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+/*
+input[type="checkbox"] {
+    display: block;
+    background: var(--main-color-hover);
+} */
