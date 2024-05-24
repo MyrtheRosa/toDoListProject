@@ -31,13 +31,13 @@
             </ol>
         </div>
         <div class="timed">
-            <h5 style="border: none">Change Timer Settings</h5>
-            <ol>
-                <h6>Activity</h6>
+            <h5>Change Timer Settings</h5>
+            <ol style="margin-top: -10px">
+                <h6><b>Activity</b></h6>
                 <li>
                     <input type="number" name="minutes" id="time"> Minutes
                 </li>
-                <h6>Pause</h6>
+                <h6><b>Pause</b></h6>
                 <li>
                     <input type="number" name="minutes" id="time"> Minutes
                 </li>

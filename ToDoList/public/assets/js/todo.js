@@ -46,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             "rgb(25, 109, 243)"
                         );
                         document.documentElement.style.setProperty(
+                            "--main-color-active",
+                            "rgba(14, 67, 181, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
                             "--main-text",
                             "rgb(25, 109, 243)"
                         );
@@ -88,6 +92,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.documentElement.style.setProperty(
                             "--main-color-hover",
                             "rgb(243, 167, 25)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-active",
+                            "rgba(181, 128, 14, 0.719)"
                         );
                         document.documentElement.style.setProperty(
                             "--main-text",
@@ -134,6 +142,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             "rgb(255, 88, 252)"
                         );
                         document.documentElement.style.setProperty(
+                            "--main-color-active",
+                            "rgba(181, 14, 181, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
                             "--main-text",
                             "rgb(212, 79, 219)"
                         );
@@ -178,6 +190,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             "rgb(47, 171, 63)"
                         );
                         document.documentElement.style.setProperty(
+                            "--main-color-active",
+                            "rgba(14, 181, 45, 0.719)"
+                        );
+                        document.documentElement.style.setProperty(
                             "--main-text",
                             "rgb(64, 155, 78)"
                         );
@@ -220,6 +236,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         document.documentElement.style.setProperty(
                             "--main-color-hover",
                             "rgb(156, 137, 73)"
+                        );
+                        document.documentElement.style.setProperty(
+                            "--main-color-active",
+                            "rgba(181, 139, 14, 0.719)"
                         );
                         document.documentElement.style.setProperty(
                             "--main-text",
