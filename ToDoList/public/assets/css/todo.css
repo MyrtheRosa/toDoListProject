@@ -260,7 +260,7 @@ section div#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    height: 25vh;
+    height: 40vh;
     z-index: 5;
     background-color: white;
     color: #0323c1;
