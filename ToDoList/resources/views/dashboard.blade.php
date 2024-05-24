@@ -11,13 +11,14 @@
     <div class="selectors">
         <div class="moon"></div>
         <div class="container1">
-            <img src="{{asset('assets/images/todotimer.jpeg')}}" alt="">
+            <img onclick="redirectTime()" id="timed" src="{{asset('assets/images/todotimer.jpeg')}}" alt="">
             <h1>ToDo list with timer</h1>
         </div>
         <div class="container2">
-            <img src="{{asset('assets/images/todonotime.jpg')}}" alt="">
+            <img onclick="redirectNoTime()" id="notimed" src="{{asset('assets/images/todonotime.jpg')}}" alt="">
             <h1>ToDo list without timer</h1>
         </div>
     </div>
+    <script src="{{asset('assets/js/keuze.js')}}"></script>
 </body>
 </html>

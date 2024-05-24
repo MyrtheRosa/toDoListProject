@@ -30,6 +30,7 @@
                 <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none" ></li>
             </ol>
         </div>
+        <a href="todo/timer" id="redirection">Go To Timed ToDo</a>
     </div>
     <div id="display">
         <div id="inputField">

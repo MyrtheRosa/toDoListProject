@@ -27,9 +27,24 @@
                 <li><input type="color" id="favcolor" value="#F9C93A" disabled> Sunshine <input type="radio" name="selectColor" value="Sunshine" id="none"></li>
                 <li><input type="color" id="favcolor" value="#F8AAF2" disabled> Pink Ivory <input type="radio" name="selectColor" value="Pink" id="none"></li>
                 <li><input type="color" id="favcolor" value="#76CB6E" disabled> Forest Green <input type="radio" name="selectColor" value="Forest" id="none"></li>
-                <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none"></li>
+                <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none" ></li>
             </ol>
         </div>
+        <div class="timed">
+            <h5 style="border: none">Change Timer Settings</h5>
+            <ol>
+                <h6>Activity</h6>
+                <li>
+                    <input type="number" name="minutes" id="time"> Minutes
+                </li>
+                <h6>Pause</h6>
+                <li>
+                    <input type="number" name="minutes" id="time"> Minutes
+                </li>
+                <button>Confirm</button>
+            </ol>
+        </div>
+        <a href="../todo" id="redirection">Go To Non Timed ToDo</a>
     </div>
     <div id="display">
         <div id="inputField">

@@ -260,7 +260,7 @@ section div#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    height: 40vh;
+    height: 30vh;
     z-index: 5;
     background-color: white;
     color: var(--main-color);
@@ -280,6 +280,8 @@ section div#mountains_front {
 
 .colors {
     width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 2px var(--main-color) dashed;
 }
 
 .colors ol {
@@ -324,3 +326,8 @@ input[type="checkbox"] {
     display: block;
     background: var(--main-color-hover);
 } */
+
+#redirection {
+    padding-top: 7px;
+    color: var(--main-text);
+}
