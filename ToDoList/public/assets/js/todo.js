@@ -163,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         );
                         document.documentElement.style.setProperty(
                             "--main-obj2",
-                            "url(../images/pink.jpg)"
+                            "url(../images/pink.jpeg)"
                         );
                         break;
 
