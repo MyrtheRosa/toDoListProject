@@ -263,7 +263,7 @@ section div#mountains_front {
     height: 40vh;
     z-index: 5;
     background-color: white;
-    color: #0323c1;
+    color: var(--main-color);
     box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
@@ -274,11 +274,13 @@ section div#mountains_front {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 10px;
-    border-bottom: 2px #0323c1 dashed;
+    border-bottom: 2px var(--main-color) dashed;
     text-align: left;
 }
 
 .colors {
+    border-bottom: 2px var(--main-color) dashed;
+    padding-bottom: 10px;
     width: 100%;
 }
 

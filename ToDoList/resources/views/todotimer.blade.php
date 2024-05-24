@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
-    <link rel="stylesheet" href="{{ asset('assets/css/todo.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/todotimer.css') }}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> --}}
@@ -27,7 +27,7 @@
                 <li><input type="color" id="favcolor" value="#F9C93A" disabled> Sunshine <input type="radio" name="selectColor" value="Sunshine" id="none"></li>
                 <li><input type="color" id="favcolor" value="#F8AAF2" disabled> Pink Ivory <input type="radio" name="selectColor" value="Pink" id="none"></li>
                 <li><input type="color" id="favcolor" value="#76CB6E" disabled> Forest Green <input type="radio" name="selectColor" value="Forest" id="none"></li>
-                <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none" ></li>
+                <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none"></li>
             </ol>
         </div>
     </div>
