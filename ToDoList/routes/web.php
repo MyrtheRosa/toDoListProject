@@ -8,7 +8,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 Route::middleware('auth')->group(function () {
     Route::post('/todo', [TodoController::class, 'store'])->name('todo');
