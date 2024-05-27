@@ -28,11 +28,84 @@ body {
     justify-content: center;
     background: linear-gradient(to bottom, var(--grad1), var(--grad2));
 }
+#container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#timer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    padding: 25px;
+    margin: 8px auto 0px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#timerContent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#selectbox1, #selectbox2{
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: calc(100% / 3 - 5px) 
+}
+
+#selectbox1 select, #selectbox2 select{
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+button{
+  width: 100%;  
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 17px 0;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  cursor: pointer;
+}
+
+#wrapper{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#wrapper img{
+    width: 100px;
+}
+
+#wrapper h1{
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0;
+}
 
 #display {
     position: absolute;
     max-width: 480px;
     width: 100%;
+    height: min-content;
     border-radius: 8px;
     padding: 25px;
     margin: 8px auto 0px;
@@ -154,6 +227,7 @@ textarea::-webkit-scrollbar {
 
 #pendingTasks #clearButton {
     padding: 6px 12px;
+    width: 100px;
     outline: none;
     border: none;
     background-color: var(--main-color);
