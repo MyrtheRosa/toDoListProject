@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, #2b1055, #4070f4);
+}
+
+#display {
+    height: auto;
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px 30px 120px;
+    background: #4070f4;
+    /* box-shadow: 0 15px 20px rgba(255, 255, 255, 0.1); */
+    box-shadow: 0 0 20px #ccc;
+    overflow: hidden;
+}
+
+#formSignUp header {
+    font-size: 30px;
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#formLogin header {
+    font-size: 30px;
+    text-align: center;
+    color: #333;
+    opacity: 0.6;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#display.active #formLogin {
+    bottom: -15%;
+    border-radius: 35%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#formLogin {
+    position: absolute;
+    left: 50%;
+    bottom: -86%;
+    transform: translateX(-50%);
+    width: calc(100% + 220px);
+    padding: 20px 140px;
+    border-radius: 50%;
+    height: 100%;
+    background: #fff;
+    transition: all 0.6s ease;
+    z-index: 500;
+}
+
+#display form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+#display.active #LoginHeader {
+    opacity: 1;
+}
+
+#display.active #SignUpHeader {
+    opacity: 0.6;
+}
+
+form input {
+    height: 60px;
+    outline: none;
+    border: none;
+    padding: 0 15px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+    border-radius: 8px;
+    background: #fff;
+}
+
+form #checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 500;
+}
+
+#formLogin input {
+    border: 1px solid #aaa;
+}
+
+#formLogin input:focus {
+    box-shadow: 0 1px 0 #ddd;
+}
+
+#checkbox input[type="checkbox"] {
+    height: 16px;
+    width: 16px;
+    accent-color: #fff;
+    cursor: pointer;
+}
+
+form #checkbox label {
+    cursor: pointer;
+    color: #fff;
+}
+
+form a {
+    color: #333;
+    text-decoration: none;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+form input[type="submit"] {
+    margin-top: 15px;
+    padding: none;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 500;
+}
+
+#formLogin input[type="submit"] {
+    background: #4070f4;
+    color: #fff;
+    border: none;
+}
+
+.acc {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.acc a {
+    border: 1px solid #fff;
+}
+
+.account {
+    display: flex;
+    flex-direction: row;
+}
+
+.account a {
+    margin-left: 5px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+header ul li a:hover,
+header ul li a.active {
+    background: #fff;
+    color: #2b1055;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon {
+    mix-blend-mode: screen;
+}
+section img#mountains_front {
+    position: absolute;
+    opacity: 0.4;
+    z-index: 10;
+}
