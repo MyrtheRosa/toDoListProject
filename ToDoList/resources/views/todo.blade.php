@@ -22,7 +22,11 @@
     </button>
     <div class="menuDiv">
         <div class="topMenu">
-            <a id="logButton" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="bi bi-box-arrow-right"></i></a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <button onclick="document.getElementById('logout-form').submit();">
+                <i class="bi bi-box-arrow-right"></i>
             <h5>Settings</h5>
         </div>
 

@@ -30,10 +30,7 @@ Route::get('/todo/timer', function () {
     return view('todotimer');
 })->middleware(['auth', 'verified'])->name('todotimer');
 
-Route::get('/logout', function() {
-
-});
-
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
