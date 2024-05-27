@@ -58,30 +58,31 @@
 
 {{--        ToDo Section        --}}
 <div id="container">
-<div id="timer">
+    <div id="timer">
         <div id="wrapper">
             <img src="timer-nobg.png" alt=""/>
             <h1>04:20:00 PM</h1>
         </div>
-            <div id="timerContent">
-                <div id="selectbox1">
-                    <select>
-                        <option value="hour" selected hidden>Hour</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                    </select>
-                </div>
-                <div id="selectbox2">
-                    <select>
-                        <option value="minutes" selected hidden>Minutes</option>
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="03">03</option>
-                    </select>
-                </div>
+        <div id="timerContent">
+            <div id="selectbox1">
+                <select>
+                    <option value="hour" selected hidden>Hour</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                </select>
             </div>
-            <button>Set Alarm</button>
+            <div id="selectbox2">
+                <select>
+                    <option value="minutes" selected hidden>Minutes</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button id="alarmBtn">Set Alarm</button>
     <div id="display">
         <div id="inputField">
             <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
