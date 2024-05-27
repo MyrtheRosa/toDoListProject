@@ -37,10 +37,10 @@
 
             <!-- Remember Me -->
             <div class="remember-forgot">
-                <label for="remember_me">
-                    <input id="remember_me" type="checkbox" name="remember">
-                    <span>{{ __('Remember me') }}</span>
-                </label>
+{{--                <label for="remember_me">--}}
+{{--                    <input id="remember_me" type="checkbox" name="remember">--}}
+{{--                    <span>{{ __('Remember me') }}</span>--}}
+{{--                </label>--}}
                 @if (Route::has('password.request'))
                     <a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
                 @endif
