@@ -1,49 +1,60 @@
-<link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <h2>Login</h2>
+</header>
+<div class="wrapper">
+    <div class="form-box login">
+        <!-- Session Status -->
+        <x-auth-session-status class="mb-4" :status="session('status')" />
 
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
 
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+            <h2>{{ __('Login') }}</h2>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <!-- Email Address -->
+            <div class="input-box">
+                <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username">
+                <label for="email">{{ __('Email') }}</label>
+            </div>
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
+            <!-- Password -->
+            <div class="input-box">
+                <input id="password" type="password" name="password" required autocomplete="current-password">
+                <label for="password">{{ __('Password') }}</label>
+            </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
 
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
+            <!-- Remember Me -->
+            <div class="remember-forgot">
+                <label for="remember_me">
+                    <input id="remember_me" type="checkbox" name="remember">
+                    <span>{{ __('Remember me') }}</span>
+                </label>
+                @if (Route::has('password.request'))
+                    <a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a>
+                @endif
+            </div>
 
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
-                </a>
-            @endif
-
-            <x-primary-button class="ms-3">
+            <button type="submit" class="btn">
                 {{ __('Log in') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout>
+            </button>
+
+            <div class="login-register">
+                <p>{{ __("Don't have an account?") }} <a href="{{ route('register') }}">{{ __('Register') }}</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
