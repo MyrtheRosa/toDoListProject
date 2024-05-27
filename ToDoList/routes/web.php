@@ -30,7 +30,9 @@ Route::get('/todo/timer', function () {
     return view('todotimer');
 })->middleware(['auth', 'verified'])->name('todotimer');
 
+Route::get('/logout', function() {
 
+});
 
 
 Route::middleware('auth')->group(function () {

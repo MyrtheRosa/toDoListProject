@@ -331,3 +331,19 @@ input[type="checkbox"] {
     padding-top: 7px;
     color: var(--main-text);
 }
+
+#logButton {
+    font-weight: 600;
+    font-size: 25px;
+    position: absolute;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    color: var(--main-color);
+}
+
+.topMenu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
