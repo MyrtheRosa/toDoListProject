@@ -21,7 +21,15 @@
           </svg>
     </button>
     <div class="menuDiv">
-        <h5>Settings</h5>
+        <div class="topMenu">
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <button id="logButton" onclick="document.getElementById('logout-form').submit();">
+                <i class="bi bi-box-arrow-right"></i>
+            </button>
+            <h5>Settings</h5>
+        </div>
         <div class="colors">
             <ol>
                 <li><input type="color" id="favcolor" value="#0a3ca7" disabled> Midnight Blue <input type="radio" name="selectColor" id="none" value="Midnight" checked></li>
@@ -47,6 +55,8 @@
         </div>
         <a href="../todo" id="redirection">Go To Non Timed ToDo</a>
     </div>
+
+{{--        ToDo Section        --}}
     <div id="display">
         <div id="inputField">
             <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>

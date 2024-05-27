@@ -264,7 +264,7 @@ section div#mountains_front {
     z-index: 5;
     background-color: white;
     color: var(--main-color);
-    box-shadow: 0 0 15px #a9a9a9;
+    box-shadow: 0 0 15px var(--main-color-hover);
     border-radius: 15px;
     transition: right 1s ease-in-out;
     padding: 10px;
