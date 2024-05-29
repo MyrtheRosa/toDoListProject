@@ -60,7 +60,7 @@
 <div id="container">
     <div id="timer">
         <div id="wrapper">
-            <img src="timer-nobg.png" alt=""/>
+            <div id="clockImg"></div>
             <h1>04:20:00 PM</h1>
         </div>
         <div id="timerContent">
