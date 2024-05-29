@@ -67,17 +67,11 @@
             <div id="selectbox1">
                 <select>
                     <option value="hour" selected hidden>Hour</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
                 </select>
             </div>
             <div id="selectbox2">
                 <select>
                     <option value="minutes" selected hidden>Minutes</option>
-                    <option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
                 </select>
             </div>
         </div>
