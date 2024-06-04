@@ -90,6 +90,7 @@
                 </div>
             </div>
             <button id="alarmBtn">Set Alarm</button>
+            
             <div id="display">
                 <div id="inputField">
                     <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>

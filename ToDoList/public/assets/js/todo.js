@@ -24,17 +24,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Functie om de geselecteerde kleurenthema op te slaan als cookie
     function saveColorTheme(theme) {
-        document.cookie = "colorTheme=" + theme + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
+        document.cookie =
+            "colorTheme=" +
+            theme +
+            "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     }
 
     // Functie om de waarde van de cookie op te halen
     function getCookie(cname) {
         const name = cname + "=";
         const decodedCookie = decodeURIComponent(document.cookie);
-        const ca = decodedCookie.split(';');
-        for(let i = 0; i < ca.length; i++) {
+        const ca = decodedCookie.split(";");
+        for (let i = 0; i < ca.length; i++) {
             let c = ca[i];
-            while (c.charAt(0) === ' ') {
+            while (c.charAt(0) === " ") {
                 c = c.substring(1);
             }
             if (c.indexOf(name) === 0) {
@@ -48,73 +51,220 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyColorTheme(theme) {
         switch (theme) {
             case "Midnight":
-                document.documentElement.style.setProperty("--main-color", "rgba(20, 88, 233, 0.719)");
-                document.documentElement.style.setProperty("--main-color-hover", "rgb(25, 109, 243)");
-                document.documentElement.style.setProperty("--main-color-active", "rgba(14, 67, 181, 0.719)");
-                document.documentElement.style.setProperty("--main-text", "rgb(25, 109, 243)");
-                document.documentElement.style.setProperty("--toDO-text", "white");
-                document.documentElement.style.setProperty("--grad1", "#2b1055");
-                document.documentElement.style.setProperty("--grad2", "#4070f4");
-                document.documentElement.style.setProperty("--note", "rgba(51, 150, 255, 0.815)");
-                document.documentElement.style.setProperty("--main-img", "url(../images/stars.png)");
-                document.documentElement.style.setProperty("--main-obj", "url(../images/moon.png)");
-                document.documentElement.style.setProperty("--main-obj2", "url(../images/mountains_front.png)");
+                document.documentElement.style.setProperty(
+                    "--main-color",
+                    "rgba(20, 88, 233, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-hover",
+                    "rgb(25, 109, 243)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-active",
+                    "rgba(14, 67, 181, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-text",
+                    "rgb(25, 109, 243)"
+                );
+                document.documentElement.style.setProperty(
+                    "--toDO-text",
+                    "white"
+                );
+                document.documentElement.style.setProperty(
+                    "--grad1",
+                    "#2b1055"
+                );
+                document.documentElement.style.setProperty(
+                    "--grad2",
+                    "#4070f4"
+                );
+                document.documentElement.style.setProperty(
+                    "--note",
+                    "rgba(51, 150, 255, 0.815)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-img",
+                    "url(../images/stars.png)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj",
+                    "url(../images/moon.png)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj2",
+                    "url(../images/mountains_front.png)"
+                );
                 break;
 
             case "Sunshine":
-                document.documentElement.style.setProperty("--main-color", "rgba(233, 198, 20, 0.719)");
-                document.documentElement.style.setProperty("--main-color-hover", "rgb(243, 167, 25)");
-                document.documentElement.style.setProperty("--main-color-active", "rgba(181, 128, 14, 0.719)");
-                document.documentElement.style.setProperty("--main-text", "rgb(243, 196, 25)");
-                document.documentElement.style.setProperty("--toDO-text", "white");
-                document.documentElement.style.setProperty("--grad1", "#6eeaf8");
-                document.documentElement.style.setProperty("--grad2", "#1eb7c5");
-                document.documentElement.style.setProperty("--note", "rgba(211, 170, 24, 0.815)");
-                document.documentElement.style.setProperty("--main-img", "none");
-                document.documentElement.style.setProperty("--main-obj", "none");
-                document.documentElement.style.setProperty("--main-obj2", "url(../images/sunshine.jpg)");
+                document.documentElement.style.setProperty(
+                    "--main-color",
+                    "rgba(233, 198, 20, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-hover",
+                    "rgb(243, 167, 25)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-active",
+                    "rgba(181, 128, 14, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-text",
+                    "rgb(243, 196, 25)"
+                );
+                document.documentElement.style.setProperty(
+                    "--toDO-text",
+                    "white"
+                );
+                document.documentElement.style.setProperty(
+                    "--grad1",
+                    "#6eeaf8"
+                );
+                document.documentElement.style.setProperty(
+                    "--grad2",
+                    "#1eb7c5"
+                );
+                document.documentElement.style.setProperty(
+                    "--note",
+                    "rgba(211, 170, 24, 0.815)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-img",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj2",
+                    "url(../images/sunshine.jpg)"
+                );
                 break;
 
             case "Pink":
-                document.documentElement.style.setProperty("--main-color", "#f29de1");
-                document.documentElement.style.setProperty("--main-color-hover", "rgb(255, 88, 252)");
-                document.documentElement.style.setProperty("--main-color-active", "rgba(181, 14, 181, 0.719)");
-                document.documentElement.style.setProperty("--main-text", "rgb(212, 79, 219)");
-                document.documentElement.style.setProperty("--toDO-text", "white");
+                document.documentElement.style.setProperty(
+                    "--main-color",
+                    "#f29de1"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-hover",
+                    "rgb(255, 88, 252)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-active",
+                    "rgba(181, 14, 181, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-text",
+                    "rgb(212, 79, 219)"
+                );
+                document.documentElement.style.setProperty(
+                    "--toDO-text",
+                    "white"
+                );
                 document.documentElement.style.setProperty("--grad1", "none");
                 document.documentElement.style.setProperty("--grad2", "none");
-                document.documentElement.style.setProperty("--note", "rgba(228, 109, 255, 0.815)");
-                document.documentElement.style.setProperty("--main-img", "none");
-                document.documentElement.style.setProperty("--main-obj", "none");
-                document.documentElement.style.setProperty("--main-obj2", "url(../images/pink.jpeg)");
+                document.documentElement.style.setProperty(
+                    "--note",
+                    "rgba(228, 109, 255, 0.815)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-img",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj2",
+                    "url(../images/pink.jpeg)"
+                );
                 break;
 
             case "Forest":
-                document.documentElement.style.setProperty("--main-color", "rgba(46, 207, 51, 0.719)");
-                document.documentElement.style.setProperty("--main-color-hover", "rgb(47, 171, 63)");
-                document.documentElement.style.setProperty("--main-color-active", "rgba(14, 181, 45, 0.719)");
-                document.documentElement.style.setProperty("--main-text", "rgb(64, 155, 78)");
-                document.documentElement.style.setProperty("--toDO-text", "white");
+                document.documentElement.style.setProperty(
+                    "--main-color",
+                    "rgba(46, 207, 51, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-hover",
+                    "rgb(47, 171, 63)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-active",
+                    "rgba(14, 181, 45, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-text",
+                    "rgb(64, 155, 78)"
+                );
+                document.documentElement.style.setProperty(
+                    "--toDO-text",
+                    "white"
+                );
                 document.documentElement.style.setProperty("--grad1", "none");
                 document.documentElement.style.setProperty("--grad2", "none");
-                document.documentElement.style.setProperty("--note", "rgba(37, 157, 45, 0.815)");
-                document.documentElement.style.setProperty("--main-img", "none");
-                document.documentElement.style.setProperty("--main-obj", "none");
-                document.documentElement.style.setProperty("--main-obj2", "url(../images/forest.jpeg)");
+                document.documentElement.style.setProperty(
+                    "--note",
+                    "rgba(37, 157, 45, 0.815)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-img",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj2",
+                    "url(../images/forest.jpeg)"
+                );
                 break;
 
             case "Caramel":
-                document.documentElement.style.setProperty("--main-color", "rgba(216, 199, 132, 0.719)");
-                document.documentElement.style.setProperty("--main-color-hover", "rgb(156, 137, 73)");
-                document.documentElement.style.setProperty("--main-color-active", "rgba(181, 139, 14, 0.719)");
-                document.documentElement.style.setProperty("--main-text", "rgb(214, 186, 96)");
-                document.documentElement.style.setProperty("--toDO-text", "white");
+                document.documentElement.style.setProperty(
+                    "--main-color",
+                    "rgba(216, 199, 132, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-hover",
+                    "rgb(156, 137, 73)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-color-active",
+                    "rgba(181, 139, 14, 0.719)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-text",
+                    "rgb(214, 186, 96)"
+                );
+                document.documentElement.style.setProperty(
+                    "--toDO-text",
+                    "white"
+                );
                 document.documentElement.style.setProperty("--grad1", "none");
                 document.documentElement.style.setProperty("--grad2", "none");
-                document.documentElement.style.setProperty("--note", "rgba(230, 183, 122, 0.815)");
-                document.documentElement.style.setProperty("--main-img", "none");
-                document.documentElement.style.setProperty("--main-obj", "none");
-                document.documentElement.style.setProperty("--main-obj2", "url(../images/caramel.jpg)");
+                document.documentElement.style.setProperty(
+                    "--note",
+                    "rgba(230, 183, 122, 0.815)"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-img",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj",
+                    "none"
+                );
+                document.documentElement.style.setProperty(
+                    "--main-obj2",
+                    "url(../images/caramel.jpg)"
+                );
                 break;
         }
     }
@@ -123,7 +273,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const savedTheme = getCookie("colorTheme");
     if (savedTheme) {
         applyColorTheme(savedTheme);
-        const savedRadio = document.querySelector(`input[name="selectColor"][value="${savedTheme}"]`);
+        const savedRadio = document.querySelector(
+            `input[name="selectColor"][value="${savedTheme}"]`
+        );
         if (savedRadio) {
             savedRadio.checked = true;
         }
@@ -138,7 +290,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
 
 //We will call this function while adding, deleting and checking/unchecking the task
 function allTasks() {
