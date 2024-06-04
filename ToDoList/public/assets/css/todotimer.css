@@ -47,6 +47,7 @@ body {
     margin: 8px auto 0px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 #timerContent {
@@ -74,7 +75,7 @@ body {
     cursor: pointer;
 }
 
-#alarmBtn {
+/* #alarmBtn {
     width: 100%;
     margin-top: 20px;
     font-size: 20px;
@@ -84,7 +85,8 @@ body {
     border-radius: 5px;
     background-color: var(--main-color);
     cursor: pointer;
-}
+    z-index: 10;
+} */
 
 #wrapper {
     display: flex;
@@ -112,7 +114,7 @@ body {
 }
 
 #display {
-    position: absolute;
+    /* position: absolute; */
     max-width: 480px;
     width: 100%;
     height: min-content;
@@ -121,6 +123,7 @@ body {
     margin: 8px auto 0px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 #display #inputField {
@@ -348,7 +351,7 @@ section div#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    height: 52vh;
+    height: 36rem;
     z-index: 5;
     background-color: white;
     color: var(--main-color);
@@ -455,6 +458,10 @@ input[type="radio"] {
     background-color: var(--main-color);
     transition: all ease-in-out 0.2s;
     border-radius: 5px;
+}
+
+.timed #pauseBtn {
+    display: none;
 }
 
 .timed button:hover {

@@ -10,10 +10,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    {{--
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script> --}}
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -57,13 +56,17 @@
                 <ol style="margin-top: -10px">
                     <h6><b>Activity</b></h6>
                     <li>
-                        <input type="number" name="minutes" id="time"> Minutes
+                        <input type="number" name="hours" id="timeHrs" value="1"> Hours
+                    </li>
+                    <li>
+                        <input type="number" name="minutes" id="timeMin" value="30"> Minutes
                     </li>
                     <h6><b>Pause</b></h6>
                     <li>
                         <input type="number" name="minutes" id="time"> Minutes
                     </li>
-                    <button>Confirm</button>
+                    <button id="alarmBtn">Start Alarm</button>
+                    <button id="pauseBtn">Pause Alarm</button>
                 </ol>
             </div>
             <a href="../todo" id="redirection">Go To Non Timed ToDo</a>
@@ -74,23 +77,10 @@
             <div id="timer">
                 <div id="wrapper">
                     <div id="clockImg"></div>
-                    <h1>04:20:00 PM</h1>
-                </div>
-                <div id="timerContent">
-                    <div id="selectbox1">
-                        <select>
-                            <option value="hour" selected hidden>Hour</option>
-                        </select>
-                    </div>
-                    <div id="selectbox2">
-                        <select>
-                            <option value="minutes" selected hidden>Minutes</option>
-                        </select>
-                    </div>
+                    <h1>00:00:00</h1>
                 </div>
             </div>
-            <button id="alarmBtn">Set Alarm</button>
-            
+
             <div id="display">
                 <div id="inputField">
                     <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
