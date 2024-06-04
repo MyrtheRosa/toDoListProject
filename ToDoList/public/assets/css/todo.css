@@ -4,6 +4,7 @@
     --toDo-text: white;
     --main-text: rgb(25, 109, 243);
     --main-color: rgba(20, 88, 233, 0.719);
+    --main-color-active: rgba(14, 67, 181, 0.719);
     --main-color-hover: rgb(25, 109, 243);
     --grad1: #2b1055;
     --grad2: #4070f4;
@@ -27,16 +28,102 @@ body {
     justify-content: center;
     background: linear-gradient(to bottom, var(--grad1), var(--grad2));
 }
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 8px;
+    max-width: 450px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    padding: 25px;
+    margin: 8px auto 0px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+#timerContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#selectbox1,
+#selectbox2 {
+    border-radius: 5px;
+    padding: 0 10px;
+    border: 1px solid #999;
+    width: calc(100% / 3 - 5px);
+}
+
+#selectbox1 select,
+#selectbox2 select {
+    outline: none;
+    border: none;
+    height: 53px;
+    width: 100%;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+/* #alarmBtn {
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 17px 0;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    cursor: pointer;
+    z-index: 10;
+} */
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clockImg {
+    background: url(../images/timer-nobg.png);
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    z-index: 3;
+}
+
+/* #wrapper img {
+    width: auto;
+} */
+
+#wrapper h1 {
+    font-size: 38px;
+    font-weight: 500;
+    margin: 30px 0;
+}
 
 #display {
-    position: absolute;
+    /* position: absolute; */
     max-width: 480px;
     width: 100%;
+    height: min-content;
     border-radius: 8px;
     padding: 25px;
     margin: 8px auto 0px;
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
 }
 
 #display #inputField {
@@ -156,6 +243,7 @@ textarea::-webkit-scrollbar {
 
 #pendingTasks #clearButton {
     padding: 6px 12px;
+    width: 100px;
     outline: none;
     border: none;
     background-color: var(--main-color);
@@ -263,11 +351,11 @@ section div#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 250px;
-    height: 30vh;
+    height: 20rem;
     z-index: 5;
     background-color: white;
     color: var(--main-color);
-    box-shadow: 0 0 15px var(--main-color-hover);
+    box-shadow: 0 0 15px #a9a9a9;
     border-radius: 15px;
     transition: right 1s ease-in-out;
     padding: 10px;
@@ -324,11 +412,73 @@ input[type="radio"] {
     border-radius: 50%;
     border: none;
 }
-/*
-input[type="checkbox"] {
-    display: block;
-    background: var(--main-color-hover);
-} */
+
+#redirection {
+    border-top: 2px dashed var(--main-color);
+    width: 100%;
+    padding-top: 7px;
+    color: var(--main-text);
+}
+
+.timed {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.timed ol {
+    list-style: none;
+    padding: 0;
+    margin-top: -20px;
+    width: 100%;
+}
+
+.timed li {
+    display: flex;
+    align-items: center;
+}
+
+.timed input[type="number"] {
+    width: 50px;
+    margin-right: 10px;
+    padding-left: 5px;
+    color: var(--main-text);
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}
+
+.timed button {
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: white;
+    background-color: var(--main-color);
+    transition: all ease-in-out 0.2s;
+    border-radius: 5px;
+}
+
+.timed #pauseBtn {
+    display: none;
+}
+
+.timed button:hover {
+    background-color: var(--main-color-hover);
+}
+
+.timed button:active {
+    background-color: var(--main-color-active);
+}
+
+.timed h6 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    font-weight: 500;
+}
 
 #redirection {
     padding-top: 7px;
