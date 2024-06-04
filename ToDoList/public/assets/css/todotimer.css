@@ -1,17 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --toDo-text: white;
-    --main-text: rgb(25, 109, 243);
-    --main-color: rgba(20, 88, 233, 0.719);
-    --main-color-active: rgba(14, 67, 181, 0.719);
-    --main-color-hover: rgb(25, 109, 243);
-    --grad1: #2b1055;
-    --grad2: #4070f4;
-    --note: rgba(51, 150, 255, 0.815);
-    --main-img: url(../images/stars.png);
-    --main-obj: url(../images/moon.png);
-    --main-obj2: url(../images/mountains_front.png);
+    --toDo-text: none;
+    --main-text: none;
+    --main-color: none;
+    --main-color-active: none;
+    --main-color-hover: none;
+    --grad1: none;
+    --grad2: none;
+    --note: none;
+    --main-img: none;
+    --main-obj: none;
+    --main-obj2: none;
+
+    /* later toevoegen */
+    --school: none;
+    --work: none;
+    --sport: none;
+    --hobby: none;
+    --other: none;
 }
 
 * {
@@ -190,6 +197,11 @@ textarea::-webkit-scrollbar {
     margin-top: 10px;
     position: relative;
     cursor: pointer;
+}
+
+/* Bezigheden */
+#toDoList #list.school {
+    border: 5px solid var(--main-color-hover);
 }
 
 #toDoList input {

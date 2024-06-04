@@ -56,10 +56,10 @@
                 <ol style="margin-top: -10px">
                     <h6><b>Activity</b></h6>
                     <li>
-                        <input type="number" name="hours" id="timeHrs" value="1"> Hours
+                        <input type="number" name="hours" id="timeHrs" value="1" min="0" max="23"> Hours
                     </li>
                     <li>
-                        <input type="number" name="minutes" id="timeMin" value="30"> Minutes
+                        <input type="number" name="minutes" id="timeMin" value="30" min="0" max="59"> Minutes
                     </li>
                     <h6><b>Pause</b></h6>
                     <li>
@@ -89,6 +89,17 @@
                 <br>
                 <div id="inputField">
                     <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
+                </div>
+                <div id="inputField">
+                    <label for="bezigheid">What are you doing?</label>
+                    <select name="bezigheid" id="bezigheid">
+                        <option value=""></option>
+                        <option value="school">School</option>
+                        <option value="work">Work</option>
+                        <option value="sport">Sport</option>
+                        <option value="hobby">Hobby</option>
+                        <option value="other">Other</option>
+                    </select>
                 </div>
                 {{-- <button>Aesthetic Warning</button> --}}
                 <ul id="toDoList"></ul>
