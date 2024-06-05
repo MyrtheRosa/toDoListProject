@@ -7,6 +7,8 @@ let paused = false;
 let hours = parseInt(document.querySelector("#timeHrs").value);
 let minutes = parseInt(document.querySelector("#timeMin").value);
 
+const menuDiv = document.querySelector(".menuDiv");
+
 currentTime.innerText = `${hours}:${minutes}:00`;
 
 function setAlarm() {
@@ -14,6 +16,7 @@ function setAlarm() {
         setAlarmButton.innerText = "Set Alarm";
         setPauseButton.style.display = "none";
         currentTime.innerText = `${hours}:${minutes}:00`;
+        menuDiv.style.height = "37rem";
         clearInterval(interval);
         return;
     }
@@ -35,6 +38,7 @@ function setAlarm() {
 
     setPauseButton.style.display = "block";
     setAlarmButton.innerText = "Reset Alarm";
+    menuDiv.style.height = "40rem";
 
     interval = setInterval(updateTime, 1000, dateTime);
 }

@@ -51,7 +51,7 @@
                             name="selectColor" value="Caramel" id="none"></li>
                 </ol>
             </div>
-            <div class="timed">
+            <div class="timed" style="border-bottom: 2px dashed red">
                 <h5>Change Timer Settings</h5>
                 <ol style="margin-top: -10px">
                     <h6><b>Activity</b></h6>
@@ -61,14 +61,11 @@
                     <li>
                         <input type="number" name="minutes" id="timeMin" value="30" min="0" max="59"> Minutes
                     </li>
-                    <h6><b>Pause</b></h6>
-                    <li>
-                        <input type="number" name="minutes" id="time"> Minutes
-                    </li>
                     <button id="alarmBtn">Start Alarm</button>
                     <button id="pauseBtn">Pause Alarm</button>
                 </ol>
             </div>
+            <button id="deleteCookiesBtn">Remove ALL ToDo cookies</button>
             <a href="../todo" id="redirection">Go To Non Timed ToDo</a>
         </div>
 

@@ -39,6 +39,7 @@
                 <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none" ></li>
             </ol>
         </div>
+        <button id="deleteCookiesBtn">Remove ALL ToDo cookies</button>
         <a href="todo/timer" id="redirection">Go To Timed ToDo</a>
     </div>
 

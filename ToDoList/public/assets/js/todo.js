@@ -340,17 +340,6 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
         inputVal = inputVal.replace("!DESC!", "");
     }
 
-    // let liTag = `<li id="list" class="pending ${bezigheid}" data-bezigheid="${bezigheid}"  onclick="handleStatus(this)">
-    //     <input type="checkbox"/>
-    //     <div id="iteminfo">
-    //     <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${bezigheid}">${bezigheid}</span>
-    //         <h5 id="task"><b>${inputTitleVal}</b></h5>
-    //         <p id="task">${inputVal}</p>
-    //     </div>
-    //     <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
-
-    // </li>`;
-
     let liTag = `<li id="list" class="pending ${
         bezigheid || "none"
     }" data-bezigheid="${bezigheid}" onclick="handleStatus(this)">
@@ -366,7 +355,7 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
     toDoList.insertAdjacentHTML("beforeend", liTag);
     inputField.value = "";
     inputTitleField.value = "";
-    bezigheidList.value = "Other";
+    bezigheidList.value = "other";
     allTasks();
     saveToCookie();
 }
@@ -493,3 +482,19 @@ function getCookie(cname) {
     return "";
 }
 loadFromCookie();
+
+document
+    .getElementById("deleteCookiesBtn")
+    .addEventListener("click", function () {
+        window.location.reload();
+        document.cookie.split(";").forEach(function (cookie) {
+            const cookieName = cookie.split("=")[0].trim();
+            if (cookieName.startsWith("myTODOs")) {
+                document.cookie =
+                    cookieName +
+                    "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            }
+        });
+
+        window.location.reload();
+    });
