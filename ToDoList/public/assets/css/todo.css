@@ -2,16 +2,23 @@
 
 :root {
     --toDo-text: white;
-    --main-text: rgb(25, 109, 243);
-    --main-color: rgba(20, 88, 233, 0.719);
-    --main-color-active: rgba(14, 67, 181, 0.719);
-    --main-color-hover: rgb(25, 109, 243);
-    --grad1: #2b1055;
-    --grad2: #4070f4;
-    --note: rgba(51, 150, 255, 0.815);
-    --main-img: url(../images/stars.png);
-    --main-obj: url(../images/moon.png);
-    --main-obj2: url(../images/mountains_front.png);
+    --main-text: none;
+    --main-color: none;
+    --main-color-active: none;
+    --main-color-hover: none;
+    --grad1: none;
+    --grad2: none;
+    --note: none;
+    --main-img: none;
+    --main-obj: none;
+    --main-obj2: none;
+
+    /* later toevoegen */
+    --school: none;
+    --work: none;
+    --sport: none;
+    --hobby: none;
+    --other: none;
 }
 
 * {
@@ -75,19 +82,6 @@ body {
     cursor: pointer;
 }
 
-/* #alarmBtn {
-    width: 100%;
-    margin-top: 20px;
-    font-size: 20px;
-    padding: 17px 0;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--main-color);
-    cursor: pointer;
-    z-index: 10;
-} */
-
 #wrapper {
     display: flex;
     justify-content: center;
@@ -102,10 +96,6 @@ body {
     height: 100px;
     z-index: 3;
 }
-
-/* #wrapper img {
-    width: auto;
-} */
 
 #wrapper h1 {
     font-size: 38px;
@@ -190,6 +180,23 @@ textarea::-webkit-scrollbar {
     margin-top: 10px;
     position: relative;
     cursor: pointer;
+}
+
+/* Bezigheden */
+#toDoList #list.school {
+    border: 5px solid var(--main-color-hover);
+}
+#toDoList #list.work {
+    border: 5px solid var(--main-color-active);
+}
+#toDoList #list.sport {
+    border: 5px solid var(--note);
+}
+#toDoList #list.hobby {
+    border: 5px solid var(--grad1);
+}
+#toDoList #list.other {
+    border: 5px solid var(--grad2);
 }
 
 #toDoList input {

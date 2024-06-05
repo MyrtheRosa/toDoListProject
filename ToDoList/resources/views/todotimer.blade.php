@@ -101,7 +101,6 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-                {{-- <button>Aesthetic Warning</button> --}}
                 <ul id="toDoList"></ul>
                 <div id="pendingTasks">
                     <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>

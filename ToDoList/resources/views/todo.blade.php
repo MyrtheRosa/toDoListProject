@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/todo.css') }}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    {{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> --}}
 </head>
 <body>
     <section>
@@ -51,7 +50,17 @@
         <div id="inputField">
             <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
         </div>
-        {{-- <button>Aesthetic Warning</button> --}}
+        <div id="inputField">
+            <label for="bezigheid">What are you doing?</label>
+            <select name="bezigheid" id="bezigheid">
+                <option value=""></option>
+                <option value="school">School</option>
+                <option value="work">Work</option>
+                <option value="sport">Sport</option>
+                <option value="hobby">Hobby</option>
+                <option value="other">Other</option>
+            </select>
+        </div>
         <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>

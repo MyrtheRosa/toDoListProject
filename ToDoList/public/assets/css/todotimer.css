@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --toDo-text: none;
+    --toDo-text: white;
     --main-text: none;
     --main-color: none;
     --main-color-active: none;
@@ -82,19 +82,6 @@ body {
     cursor: pointer;
 }
 
-/* #alarmBtn {
-    width: 100%;
-    margin-top: 20px;
-    font-size: 20px;
-    padding: 17px 0;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--main-color);
-    cursor: pointer;
-    z-index: 10;
-} */
-
 #wrapper {
     display: flex;
     justify-content: center;
@@ -109,10 +96,6 @@ body {
     height: 100px;
     z-index: 3;
 }
-
-/* #wrapper img {
-    width: auto;
-} */
 
 #wrapper h1 {
     font-size: 38px;
@@ -202,6 +185,18 @@ textarea::-webkit-scrollbar {
 /* Bezigheden */
 #toDoList #list.school {
     border: 5px solid var(--main-color-hover);
+}
+#toDoList #list.work {
+    border: 5px solid var(--main-color-active);
+}
+#toDoList #list.sport {
+    border: 5px solid var(--note);
+}
+#toDoList #list.hobby {
+    border: 5px solid var(--grad1);
+}
+#toDoList #list.other {
+    border: 5px solid var(--grad2);
 }
 
 #toDoList input {
@@ -514,4 +509,11 @@ input[type="radio"] {
     width: 100%;
     display: flex;
     flex-direction: row;
+}
+
+#bezigheid {
+    width: 100%;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    color: var(--main-text);
 }
