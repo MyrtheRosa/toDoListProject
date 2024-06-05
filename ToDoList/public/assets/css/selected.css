@@ -38,8 +38,8 @@ body {
 
 .container1 img {
     height: auto;
-    top: 150px;
-    right: 100px;
+    top: 15rem;
+    right: 10rem;
     position: absolute;
     width: 40%;
     z-index: 2;
@@ -53,15 +53,15 @@ body {
 .container1 h1 {
     opacity: 0;
     position: absolute;
-    top: 170px;
-    right: 300px;
+    top: 18rem;
+    right: 23rem;
     z-index: 0;
     transition: all ease-in-out 0.4s;
 }
 
 .container1 img:hover ~ h1 {
     opacity: 1;
-    top: 100px;
+    top: 12rem;
 }
 
 .container1 img:hover {
@@ -70,8 +70,8 @@ body {
 
 .container2 img {
     height: auto;
-    top: 150px;
-    left: 100px;
+    top: 15rem;
+    left: 10rem;
     position: absolute;
     width: 40%;
     z-index: 1;
@@ -85,15 +85,15 @@ body {
 .container2 h1 {
     opacity: 0;
     position: absolute;
-    top: 170px;
-    left: 300px;
+    top: 18rem;
+    left: 21rem;
     z-index: 0;
     transition: all ease-in-out 0.4s;
 }
 
 .container2 img:hover ~ h1 {
     opacity: 1;
-    top: 100px;
+    top: 12rem;
 }
 
 .container2 img:hover {

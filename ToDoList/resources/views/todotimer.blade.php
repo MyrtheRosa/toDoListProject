@@ -83,6 +83,27 @@
 
             <div class="space"></div>
 
+            <div class="filterDiv" style="left: 65rem; opacity:0">
+                <h6 style="margin-top: 3px">Filters</h6>
+                <div class="selections">
+                    <div class="selection">
+                        <label for="none">None</label>
+                        <input type="radio" name="filterList" class="filter" id="none" value="none" checked>
+                    </div>
+                    <div class="selection">
+                        <label for="Alphabetic">Alphabetic</label>
+                        <input type="radio" name="filterList" class="filter" value="alpha" id="Alphabetic">
+                    </div>
+                    <div class="selection">
+                        <label for="Tags">Tags</label>
+                        <input type="radio" name="filterList" class="filter" value="tags" id="Tags">
+
+                    </div>
+                    <div class="options"></div>
+                </div>
+            </div>
+
+
             <div id="display">
                 <div id="inputField">
                     <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
@@ -95,14 +116,14 @@
                 <div id="inputField">
                     <label for="bezigheid">What are you doing?</label>
                     <select name="bezigheid" id="bezigheid">
-                        <option value=""></option>
                         <option value="school">School</option>
                         <option value="work">Work</option>
                         <option value="sport">Sport</option>
                         <option value="hobby">Hobby</option>
-                        <option value="other">Other</option>
+                        <option value="other" selected>Other</option>
                     </select>
                 </div>
+                <button id="filterToDo"><i class="bi bi-filter"></i></button>
                 <ul id="toDoList"></ul>
                 <div id="pendingTasks">
                     <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>

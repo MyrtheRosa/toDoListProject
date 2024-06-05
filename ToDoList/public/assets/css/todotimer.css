@@ -537,10 +537,82 @@ input[type="radio"] {
 #bezigheid {
     width: 100%;
     border: 1px solid var(--main-color);
-    border-radius: 10px;
+    border-radius: 5px;
     color: var(--main-text);
 }
 
 .space {
     width: 40rem;
+}
+
+#filterToDo {
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    font-size: 30px;
+    transition: all ease-in-out 0.2s;
+}
+
+#filterToDo:hover {
+    color: var(--main-color-hover);
+}
+
+.filterDiv h6 {
+    color: var(--main-color-hover);
+}
+
+.filterDiv {
+    top: 37.5rem;
+    left: 65rem;
+    opacity: 0;
+    position: absolute;
+    margin-right: 5px;
+    background-color: white;
+    height: 7rem;
+    width: 7.5rem;
+    padding: 5px;
+    z-index: 9;
+    border-radius: 10px;
+    box-shadow: 0 0 15px var(--main-color);
+    color: var(--main-color);
+    transition: all ease-in-out 0.2s;
+}
+
+.selections {
+    display: flex;
+    flex-direction: column;
+}
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection input[type="radio"] {
+    /* background-color: white; */
+    accent-color: var(--main-color);
+    align-self: flex-end;
+}
+
+.options {
+    color: var(--main-color-hover);
+    font-size: small;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.options input[type="checkbox"] {
+    accent-color: var(--main-color);
+    align-self: flex-end;
+    margin-top: 5px;
+    float: right; /* Lijn de checkbox rechts uit */
+    margin-left: 10px;
+}
+
+span.none {
+    display: none;
 }

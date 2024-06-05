@@ -41,6 +41,27 @@
         </div>
         <a href="todo/timer" id="redirection">Go To Timed ToDo</a>
     </div>
+
+    <div class="filterDiv" style="left: 50rem; opacity:0">
+        <h6 style="margin-top: 3px">Filters</h6>
+        <div class="selections">
+            <div class="selection">
+                <label for="none">None</label>
+                <input type="radio" name="filterList" class="filter" id="none" value="none" checked>
+            </div>
+            <div class="selection">
+                <label for="Alphabetic">Alphabetic</label>
+                <input type="radio" name="filterList" class="filter" value="alpha" id="Alphabetic">
+            </div>
+            <div class="selection">
+                <label for="Tags">Tags</label>
+                <input type="radio" name="filterList" class="filter" value="tags" id="Tags">
+
+            </div>
+            <div class="options"></div>
+        </div>
+    </div>
+
     <div id="display">
         <div id="inputField">
             <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
@@ -61,6 +82,7 @@
                 <option value="other">Other</option>
             </select>
         </div>
+        <button id="filterToDo"><i class="bi bi-filter"></i></button>
         <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>
