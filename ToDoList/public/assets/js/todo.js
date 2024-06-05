@@ -64,6 +64,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--main-img": "url(../images/stars.png)",
                 "--main-obj": "url(../images/moon.png)",
                 "--main-obj2": "url(../images/mountains_front.png)",
+                "--school": "#0171c6",
+                "--work": "#2f58c7",
+                "--sport": "#5073d4",
+                "--hobby": "#2d4da5",
+                "--other": "#6a82c2",
             },
             Sunshine: {
                 "--main-color": "rgba(233, 198, 20, 0.719)",
@@ -77,6 +82,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--main-img": "none",
                 "--main-obj": "none",
                 "--main-obj2": "url(../images/sunshine.jpg)",
+                "--school": "#ffae0d",
+                "--work": "#dc970e",
+                "--sport": "#e2b65c",
+                "--hobby": "#f6c259",
+                "--other": "#c98f1a",
             },
             Pink: {
                 "--main-color": "#f29de1",
@@ -90,6 +100,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--main-img": "none",
                 "--main-obj": "none",
                 "--main-obj2": "url(../images/pink.jpeg)",
+                "--school": "#ff0df3",
+                "--work": "#db45d4",
+                "--sport": "#b822b1",
+                "--hobby": "#e38cde",
+                "--other": "#ac0aa4",
             },
             Forest: {
                 "--main-color": "rgba(46, 207, 51, 0.719)",
@@ -103,6 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--main-img": "none",
                 "--main-obj": "none",
                 "--main-obj2": "url(../images/forest.jpeg)",
+                "--school": "#3fce4b",
+                "--work": "#29bf53",
+                "--sport": "#38a146",
+                "--hobby": "#71d37b",
+                "--other": "#0a8710",
             },
             Caramel: {
                 "--main-color": "rgba(216, 199, 132, 0.719)",
@@ -116,6 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "--main-img": "none",
                 "--main-obj": "none",
                 "--main-obj2": "url(../images/caramel.jpg)",
+                "--school": "#dcc176",
+                "--work": "#bf9c29",
+                "--sport": "#a18838",
+                "--hobby": "#cfbd83",
+                "--other": "#876c0a",
             },
         };
 
@@ -177,8 +202,10 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
         <div id="iteminfo">
             <h5 id="task"><b>${inputTitleVal}</b></h5>
             <p id="task">${inputVal}</p>
+            <span id="tag">${bezigheid}</span>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
+
     </li>`;
 
     toDoList.insertAdjacentHTML("beforeend", liTag);
@@ -282,6 +309,7 @@ function loadFromCookie() {
         <div id="iteminfo">
             <h5 id="task"><b>${task.title}</b></h5>
             <p id="task">${task.para}</p>
+            <span id="tag">${task.bezigheid}</span>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;

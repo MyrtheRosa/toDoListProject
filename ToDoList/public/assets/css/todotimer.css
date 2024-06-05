@@ -184,19 +184,19 @@ textarea::-webkit-scrollbar {
 
 /* Bezigheden */
 #toDoList #list.school {
-    border: 5px solid var(--main-color-hover);
+    border: 5px solid var(--school);
 }
 #toDoList #list.work {
-    border: 5px solid var(--main-color-active);
+    border: 5px solid var(--work);
 }
 #toDoList #list.sport {
-    border: 5px solid var(--note);
+    border: 5px solid var(--sport);
 }
 #toDoList #list.hobby {
-    border: 5px solid var(--grad1);
+    border: 5px solid var(--hobby);
 }
 #toDoList #list.other {
-    border: 5px solid var(--grad2);
+    border: 5px solid var(--other);
 }
 
 #toDoList input {
