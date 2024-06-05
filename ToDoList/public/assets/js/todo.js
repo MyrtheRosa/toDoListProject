@@ -200,9 +200,9 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
     let liTag = `<li id="list" class="pending ${bezigheid}" data-bezigheid="${bezigheid}"  onclick="handleStatus(this)">
         <input type="checkbox"/>
         <div id="iteminfo">
+        <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${bezigheid}">${bezigheid}</span>
             <h5 id="task"><b>${inputTitleVal}</b></h5>
             <p id="task">${inputVal}</p>
-            <span id="tag">${bezigheid}</span>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
 
@@ -307,9 +307,11 @@ function loadFromCookie() {
             }" onclick="handleStatus(this)">
         <input type="checkbox" ${task.checked ? "checked" : ""} />
         <div id="iteminfo">
+        <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${
+            task.bezigheid
+        }">${task.bezigheid}</span>
             <h5 id="task"><b>${task.title}</b></h5>
             <p id="task">${task.para}</p>
-            <span id="tag">${task.bezigheid}</span>
         </div>
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;

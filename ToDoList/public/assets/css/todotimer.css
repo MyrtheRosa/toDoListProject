@@ -185,17 +185,41 @@ textarea::-webkit-scrollbar {
 #toDoList #list.school {
     border: 5px solid var(--school);
 }
+
+#toDoList #list span.school {
+    background: var(--school) !important;
+}
+
 #toDoList #list.work {
     border: 5px solid var(--work);
 }
+
+#toDoList #list span.work {
+    background: var(--work) !important;
+}
+
 #toDoList #list.sport {
     border: 5px solid var(--sport);
 }
+
+#toDoList #list span.sport {
+    background: var(--sport) !important;
+}
+
 #toDoList #list.hobby {
     border: 5px solid var(--hobby);
 }
+
+#toDoList #list span.hobby {
+    background: var(--hobby) !important;
+}
+
 #toDoList #list.other {
     border: 5px solid var(--other);
+}
+
+#toDoList #list span.other {
+    background: var(--other) !important;
 }
 
 #toDoList input {
