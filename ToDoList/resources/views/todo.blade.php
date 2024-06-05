@@ -74,12 +74,11 @@
         <div id="inputField">
             <label for="bezigheid">What are you doing?</label>
             <select name="bezigheid" id="bezigheid">
-                <option value=""></option>
                 <option value="school">School</option>
                 <option value="work">Work</option>
                 <option value="sport">Sport</option>
                 <option value="hobby">Hobby</option>
-                <option value="other">Other</option>
+                <option value="other" selected>Other</option>
             </select>
         </div>
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
