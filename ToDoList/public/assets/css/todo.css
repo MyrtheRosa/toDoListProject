@@ -510,3 +510,14 @@ input[type="radio"] {
     display: flex;
     flex-direction: row;
 }
+
+label {
+    padding: 5px;
+}
+
+#bezigheid {
+    width: 100%;
+    color: var(--main-text);
+    border: 1px solid var(--main-color);
+    border-radius: 5px;
+}

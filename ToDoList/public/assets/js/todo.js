@@ -23,7 +23,6 @@ settings.addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const radios = document.querySelectorAll('input[name="selectColor"]');
 
-    // Functie om de geselecteerde kleurenthema op te slaan als cookie
     function saveColorTheme(theme) {
         document.cookie =
             "colorTheme=" +
@@ -35,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
         saveColorTheme("Midnight");
     }
 
-    // Functie om de waarde van de cookie op te halen
     function getCookie(cname) {
         const name = cname + "=";
         const decodedCookie = decodeURIComponent(document.cookie);
@@ -52,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return "";
     }
 
-    // Functie om de kleurenthema toe te passen op basis van de gegeven waarde
     function applyColorTheme(theme) {
         const themes = {
             Midnight: {
@@ -134,7 +131,6 @@ document.addEventListener("DOMContentLoaded", function () {
         applyTheme(theme);
     }
 
-    // Lees de opgeslagen kleurenthema uit de cookie en pas deze toe
     const savedTheme = getCookie("colorTheme");
     if (savedTheme) {
         applyColorTheme(savedTheme);
@@ -146,7 +142,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Voeg event listeners toe aan elke radio button
     radios.forEach(function (radio) {
         radio.addEventListener("change", function () {
             const selectedTheme = this.value;
@@ -156,11 +151,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-//We will call this function while adding, deleting and checking/unchecking the task
 function allTasks() {
     let tasks = document.querySelectorAll(".pending");
 
-    //if task.length = 0-> num text will be no, if not then pending value will be tasks.length
     pendingNum.textContent = tasks.length === 0 ? "no" : tasks.length;
     let allLists = document.querySelectorAll("#list");
     if (allLists.length > 0) {
@@ -188,9 +181,9 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
 
-    toDoList.insertAdjacentHTML("beforeend", liTag); //insert liTag into div
-    inputField.value = ""; //removing value from input field
-    inputTitleField.value = ""; //removing value from input field
+    toDoList.insertAdjacentHTML("beforeend", liTag);
+    inputField.value = "";
+    inputTitleField.value = "";
     bezigheidList.value = "";
     allTasks();
     saveToCookie();
@@ -213,12 +206,10 @@ function inputOnClick(event) {
 
 inputField.addEventListener("keyup", inputOnClick);
 inputTitleField.addEventListener("keyup", inputOnClick);
+bezigheidList.addEventListener("keyup", inputOnClick);
 
-//checking and unchecking the checkbox while we click on a task
 function handleStatus(e) {
-    const checkbox = e.querySelector("input"); //getting checkbox
-    //  optie 1: checkbox.checked = checkbox.checked ? false : true;
-    //optie 2:
+    const checkbox = e.querySelector("input");
     if (checkbox.checked === false) {
         checkbox.checked = true;
     } else if (checkbox.checked === true) {
@@ -231,11 +222,10 @@ function handleStatus(e) {
 
 function deleteTask(e) {
     const taskToRemove = e.parentElement;
-    taskToRemove.remove(); // Remove the task from the DOM
+    taskToRemove.remove();
     allTasks();
-    saveToCookie(); // Update the cookie after removing the task
+    saveToCookie();
 
-    // Remove the task from the saved tasks in the cookie
     removeFromSavedTasks(taskToRemove);
 }
 
@@ -251,7 +241,6 @@ function removeFromSavedTasks(taskToRemove) {
     }
 }
 
-//deleting all the tasks while we click on the clear button
 function clear(event) {
     toDoList.innerHTML = " ";
     allTasks();
@@ -259,9 +248,50 @@ function clear(event) {
 }
 clearButton.addEventListener("click", clear);
 
+// function saveToCookie() {
+//     let toDo = document.querySelectorAll("#toDoList li");
+
+//     const itemsToSave = [];
+//     toDo.forEach((item) => {
+//         itemsToSave.push({
+//             title: item.querySelector("h5").innerHTML,
+//             para: item.querySelector("p").innerHTML,
+//             checked: item.querySelector("input").checked,
+//             bezigheid: item.getAttribute("data-bezigheid"),
+//         });
+//     });
+
+//     const myJson = JSON.stringify(itemsToSave);
+//     document.cookie = "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
+// }
+
+// function loadFromCookie() {
+//     const loadedCookie = getCookie("myTODOs");
+//     if (loadedCookie == getCookie("myTODOs")) {
+//         toDoList.innerHTML = "";
+
+//         const todos = JSON.parse(loadedCookie);
+//         todos.forEach((task) => {
+//             let liTag = `<li id="list" class="${
+//                 task.checked ? "" : "pending"
+//             } ${task.bezigheid}" data-bezigheid="${
+//                 task.bezigheid
+//             }" onclick="handleStatus(this)">
+//         <input type="checkbox" ${task.checked ? "checked" : ""} />
+//         <div id="iteminfo">
+//             <h5 id="task"><b>${task.title}</b></h5>
+//             <p id="task">${task.para}</p>
+//         </div>
+//         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
+//     </li>`;
+//             toDoList.insertAdjacentHTML("beforeend", liTag);
+//         });
+//     }
+//     allTasks();
+// }
+
 function saveToCookie() {
     let toDo = document.querySelectorAll("#toDoList li");
-    // console.log(toDo);
 
     const itemsToSave = [];
     toDo.forEach((item) => {
@@ -274,7 +304,9 @@ function saveToCookie() {
     });
 
     const myJson = JSON.stringify(itemsToSave);
-    document.cookie = "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
+    // Set the cookie with the appropriate path to make it accessible across pages
+    document.cookie =
+        "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
 }
 
 function loadFromCookie() {
