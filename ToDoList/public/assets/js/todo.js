@@ -248,48 +248,6 @@ function clear(event) {
 }
 clearButton.addEventListener("click", clear);
 
-// function saveToCookie() {
-//     let toDo = document.querySelectorAll("#toDoList li");
-
-//     const itemsToSave = [];
-//     toDo.forEach((item) => {
-//         itemsToSave.push({
-//             title: item.querySelector("h5").innerHTML,
-//             para: item.querySelector("p").innerHTML,
-//             checked: item.querySelector("input").checked,
-//             bezigheid: item.getAttribute("data-bezigheid"),
-//         });
-//     });
-
-//     const myJson = JSON.stringify(itemsToSave);
-//     document.cookie = "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
-// }
-
-// function loadFromCookie() {
-//     const loadedCookie = getCookie("myTODOs");
-//     if (loadedCookie == getCookie("myTODOs")) {
-//         toDoList.innerHTML = "";
-
-//         const todos = JSON.parse(loadedCookie);
-//         todos.forEach((task) => {
-//             let liTag = `<li id="list" class="${
-//                 task.checked ? "" : "pending"
-//             } ${task.bezigheid}" data-bezigheid="${
-//                 task.bezigheid
-//             }" onclick="handleStatus(this)">
-//         <input type="checkbox" ${task.checked ? "checked" : ""} />
-//         <div id="iteminfo">
-//             <h5 id="task"><b>${task.title}</b></h5>
-//             <p id="task">${task.para}</p>
-//         </div>
-//         <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
-//     </li>`;
-//             toDoList.insertAdjacentHTML("beforeend", liTag);
-//         });
-//     }
-//     allTasks();
-// }
-
 function saveToCookie() {
     let toDo = document.querySelectorAll("#toDoList li");
 
@@ -304,7 +262,6 @@ function saveToCookie() {
     });
 
     const myJson = JSON.stringify(itemsToSave);
-    // Set the cookie with the appropriate path to make it accessible across pages
     document.cookie =
         "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
 }
