@@ -81,6 +81,8 @@
                 </div>
             </div>
 
+            <div class="space"></div>
+
             <div id="display">
                 <div id="inputField">
                     <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>

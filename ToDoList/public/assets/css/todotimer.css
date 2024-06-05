@@ -540,3 +540,7 @@ input[type="radio"] {
     border-radius: 10px;
     color: var(--main-text);
 }
+
+.space {
+    width: 40rem;
+}
