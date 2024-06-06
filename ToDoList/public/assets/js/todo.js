@@ -13,6 +13,12 @@ const filterDiv = document.querySelector(".filterDiv");
 
 const options = document.querySelectorAll(".options");
 
+const charCountLabel = document.getElementById("charCount");
+const todoCountLabel = document.getElementById("todoCount");
+
+const MAX_TOTAL_LENGTH = 74;
+const MAX_TODO_COUNT = 5;
+
 settings.addEventListener("click", function () {
     if (settingDiv.style.right === "10px") {
         settingDiv.style.right = "-300px";
@@ -50,6 +56,68 @@ if (filterDiv.style.left === "50rem") {
         }
     });
 }
+
+inputField.addEventListener("input", checkTotalLength);
+inputTitleField.addEventListener("input", checkTotalLength);
+
+function checkTotalLength() {
+    const charFullLabel = document.getElementById("charFullLabel");
+    const totalLength = inputField.value.length + inputTitleField.value.length;
+
+    if (totalLength >= MAX_TOTAL_LENGTH) {
+        inputField.value = inputField.value.slice(
+            0,
+            MAX_TOTAL_LENGTH - inputTitleField.value.length
+        );
+        inputTitleField.value = inputTitleField.value.slice(
+            0,
+            MAX_TOTAL_LENGTH - inputField.value.length
+        );
+        charFullLabel.style.color = "darkred";
+    } else if (totalLength >= 70 && totalLength <= 74) {
+        charFullLabel.style.color = "red";
+    } else if (totalLength >= 50 && totalLength < 70) {
+        charFullLabel.style.color = "orange";
+    } else {
+        charFullLabel.style.color = "var(--main-color)";
+    }
+    charCountLabel.textContent = `${totalLength}`;
+}
+
+inputField.addEventListener("input", checkTotalLength);
+inputTitleField.addEventListener("input", checkTotalLength);
+
+function checkTodoCount() {
+    const todoFullLabel = document.getElementById("todoFullLabel");
+    const todoCount = toDoList.children.length;
+
+    if (todoCount >= MAX_TODO_COUNT) {
+        inputField.disabled = true;
+        inputTitleField.disabled = true;
+        inputField.value = "";
+        inputTitleField.value = "";
+        todoCountLabel.textContent = `${MAX_TODO_COUNT}`;
+        todoFullLabel.style.color = "darkred";
+    } else if (todoCount === 4 && todoCount < 5) {
+        inputField.disabled = false;
+        inputTitleField.disabled = false;
+        todoCountLabel.textContent = `${todoCount}`;
+        todoFullLabel.style.color = "red";
+    } else if (todoCount === 3 && todoCount < 4) {
+        inputField.disabled = false;
+        inputTitleField.disabled = false;
+        todoCountLabel.textContent = `${todoCount}`;
+        todoFullLabel.style.color = "orange";
+    } else {
+        inputField.disabled = false;
+        inputTitleField.disabled = false;
+        todoFullLabel.style.color = "var(--main-color)";
+        todoCountLabel.textContent = `${todoCount}`;
+    }
+}
+
+inputField.addEventListener("input", checkTodoCount);
+inputTitleField.addEventListener("input", checkTodoCount);
 
 const filterRadios = document.querySelectorAll(".filterDiv input.filter");
 filterRadios.forEach(function (radio) {
@@ -336,13 +404,14 @@ function allTasks() {
 }
 
 function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
-    if (inputVal.includes("!DESC!")) {
-        inputVal = inputVal.replace("!DESC!", "");
-    }
+    if (toDoList.children.length < MAX_TODO_COUNT) {
+        if (inputVal.includes("!DESC!")) {
+            inputVal = inputVal.replace("!DESC!", "");
+        }
 
-    let liTag = `<li id="list" class="pending ${
-        bezigheid || "none"
-    }" data-bezigheid="${bezigheid}" onclick="handleStatus(this)">
+        let liTag = `<li id="list" class="pending ${
+            bezigheid || "none"
+        }" data-bezigheid="${bezigheid}" onclick="handleStatus(this)">
     <input type="checkbox" />
     <div id="iteminfo">
     <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${bezigheid}">${bezigheid}</span>
@@ -352,12 +421,13 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
     <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
     </li>`;
 
-    toDoList.insertAdjacentHTML("beforeend", liTag);
-    inputField.value = "";
-    inputTitleField.value = "";
-    bezigheidList.value = "other";
-    allTasks();
-    saveToCookie();
+        toDoList.insertAdjacentHTML("beforeend", liTag);
+        inputField.value = "";
+        inputTitleField.value = "";
+        bezigheidList.value = "other";
+        allTasks();
+        saveToCookie();
+    }
 }
 
 function inputOnClick(event) {
@@ -398,7 +468,21 @@ function deleteTask(e) {
     saveToCookie();
 
     removeFromSavedTasks(taskToRemove);
+    checkTodoCount();
 }
+
+// function removeFromSavedTasks(taskToRemove) {
+
+//     const loadedCookie = getCookie("myTODOs");
+//     if (loadedCookie == getCookie("myTODOs")) {
+//         let todos = JSON.parse(loadedCookie);
+//         const taskId = taskToRemove.id;
+//         todos = todos.filter((task) => task.title !== taskId);
+//         const myJson = JSON.stringify(todos);
+//         document.cookie =
+//             "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
+//     }
+// }
 
 function removeFromSavedTasks(taskToRemove) {
     const loadedCookie = getCookie("myTODOs");
@@ -408,7 +492,7 @@ function removeFromSavedTasks(taskToRemove) {
         todos = todos.filter((task) => task.title !== taskId);
         const myJson = JSON.stringify(todos);
         document.cookie =
-            "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
+            "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
     }
 }
 
@@ -416,6 +500,7 @@ function clear(event) {
     toDoList.innerHTML = " ";
     allTasks();
     saveToCookie();
+    checkTodoCount();
 }
 clearButton.addEventListener("click", clear);
 

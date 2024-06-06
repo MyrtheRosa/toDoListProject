@@ -33,7 +33,6 @@
                     @csrf
                 </form>
                 <button class="editBtn" onclick="window.location = '/profile'">
-                    {{-- <i class="bi bi-pencil-fill"></i> --}}
                     <i class="uil uil-edit-alt"></i>
                 </button>
                 <button id="logButton" onclick="document.getElementById('logout-form').submit();">
@@ -113,6 +112,7 @@
                 <br>
                 <div id="inputField">
                     <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
+                    <label id="charFullLabel" style="position: absolute;bottom:0.2rem;right:0.2rem;" ><span id="charCount">0</span>/75</label>
                 </div>
                 <div id="inputField">
                     <label for="bezigheid">What are you doing?</label>
@@ -124,7 +124,11 @@
                         <option value="other" selected>Other</option>
                     </select>
                 </div>
-                <button id="filterToDo"><i class="bi bi-filter"></i></button>
+                <div class="bar">
+                    <button id="filterToDo"><i class="bi bi-filter"></i></button>
+                    <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
+                </div>
+
                 <ul id="toDoList"></ul>
                 <div id="pendingTasks">
                     <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>

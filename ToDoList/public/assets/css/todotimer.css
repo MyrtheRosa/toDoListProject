@@ -660,3 +660,21 @@ input[type="radio"] {
 span.none {
     display: none;
 }
+
+.bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bar label {
+    color: var(--main-color);
+}
+
+#charFullLabel {
+    color: var(--main-color);
+}
+
+#todoFullLabel {
+    color: var(--main-color);
+}
