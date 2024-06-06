@@ -23,6 +23,8 @@ body {
     background-image: url(../images/stars.png);
     display: flex;
     flex-direction: row;
+    justify-content: space-between; /* Zorgt voor ruimte tussen de afbeeldingen */
+    align-items: center;
 }
 
 .moon {
@@ -35,13 +37,25 @@ body {
     height: 100vh;
     z-index: 1;
 }
+.container1, .container2{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 5rem;
+    margin-bottom: 35%;
+    padding: 4rem;
+}
 
 .container1 img {
     height: auto;
     top: 15rem;
     right: 10rem;
-    position: absolute;
-    width: 40%;
+    margin-left: 25rem;
+    position: relative;
+    width: 90%;
     z-index: 2;
     transition: all ease-in-out 0.2s;
     border-radius: 10px;
@@ -71,8 +85,9 @@ body {
     height: auto;
     top: 15rem;
     left: 10rem;
-    position: absolute;
-    width: 40%;
+    margin-right: 25rem;
+    position: relative;
+    width: 90%;
     z-index: 1;
     transition: all ease-in-out 0.2s;
     border-radius: 10px;
