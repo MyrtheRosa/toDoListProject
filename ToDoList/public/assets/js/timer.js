@@ -28,6 +28,7 @@ function setAlarm() {
         minutes = 59;
     } else if (hours >= 24) {
         hours = 23;
+        minutes = 59;
     }
 
     currentTime.innerText = `${hours}:${minutes}:00`;
