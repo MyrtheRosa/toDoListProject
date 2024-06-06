@@ -748,7 +748,7 @@ section div#mountains_front {
     align-items: flex-start;
     width: 15.625rem;
     height: 37rem;
-    z-index: 5;
+    z-index: 15;
     background-color: white;
     color: var(--main-color);
     box-shadow: 0 0 0.9375rem #a9a9a9;
