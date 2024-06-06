@@ -32,6 +32,9 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
                 </form>
+                <button class="editBtn" onclick="window.location = '/profile'">
+                    <i class="bi bi-pencil-fill"></i>
+                </button>
                 <button id="logButton" onclick="document.getElementById('logout-form').submit();">
                     <i class="bi bi-box-arrow-right"></i>
                 </button>

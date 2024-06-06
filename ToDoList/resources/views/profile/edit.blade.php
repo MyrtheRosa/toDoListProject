@@ -1,8 +1,15 @@
 <x-app-layout>
-    <x-slot name="header">
+    <x-slot name="header" style="justify-content: space-between">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
+            {{ __('Profile Information') }}
         </h2>
+        {{-- <button onclick="window.location = {{ URL::route('dashboard') }}">
+            Return to My ToDo List
+        </button> --}}
+
+        <x-responsive-nav-link :href="route('dashboard')">
+            {{ __('Return to My ToDo List') }}
+        </x-responsive-nav-link>
     </x-slot>
 
     <div class="py-12">
