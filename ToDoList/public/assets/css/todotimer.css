@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
     --toDo-text: white;
@@ -54,7 +54,7 @@ body {
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
-    /* opacity: 0.7; */
+    /* opacity: 0.7;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
 }
@@ -65,7 +65,7 @@ body {
     position: absolute;
     right: 55px;
     /*height: 30px;*/
-    /*width: 30px;*/
+/*width: 30px;
     color: var(--main-color);
     background-color: transparent;
     border: none;
@@ -128,7 +128,7 @@ body {
 }
 
 #display {
-    /* position: absolute; */
+    /* position: absolute;
     max-width: 480px;
     width: 100%;
     height: min-content;
@@ -139,7 +139,7 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     z-index: 10;
     /* backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); */
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #display #inputField {
@@ -208,7 +208,7 @@ textarea::-webkit-scrollbar {
     cursor: pointer;
 }
 
-/* Bezigheden */
+/* Bezigheden
 #toDoList #list.school {
     border: 5px solid var(--school);
 }
@@ -315,8 +315,672 @@ textarea::-webkit-scrollbar {
 
 #pendingTasks #clearButton:hover {
     background-color: var(--main-color-hover);
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+    --toDo-text: white;
+    --main-text: none;
+    --main-color: none;
+    --main-color-active: none;
+    --main-color-hover: none;
+    --grad1: none;
+    --grad2: none;
+    --note: none;
+    --main-img: none;
+    --main-obj: none;
+    --main-obj2: none;
+
+    --school: none;
+    --work: none;
+    --sport: none;
+    --hobby: none;
+    --other: none;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--grad1), var(--grad2));
+}
+
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    max-width: 28.125rem;
+    width: 100%;
+    max-height: 37.5rem;
+    height: 100%;
+    padding: 1.5625rem;
+    margin: 0.5rem auto 0;
+    background-color: #fff;
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* opacity: 0.7; */
+    -webkit-backdrop-filter: blur(0.625rem);
+    backdrop-filter: blur(0.625rem);
+}
+
+.editBtn {
+    font-weight: 600;
+    font-size: 1.5625rem;
+    position: absolute;
+    right: 3.4375rem;
+    /*height: 1.875rem;*/
+    /*width: 1.875rem;*/
+    color: var(--main-color);
+    background-color: transparent;
+    border: none;
+    transition: all ease-in-out 0.2s;
+}
+
+.editBtn:hover {
+    color: var(--main-color-hover);
+}
+
+.editBtn:active {
+    color: var(--main-color-active);
+}
+
+#timerContent {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+#selectbox1,
+#selectbox2 {
+    border-radius: 0.3125rem;
+    padding: 0 0.625rem;
+    border: 0.0625rem solid #999;
+    width: calc(100% / 3 - 0.3125rem);
+}
+
+#selectbox1 select,
+#selectbox2 select {
+    outline: none;
+    border: none;
+    height: 3.3125rem;
+    width: 100%;
+    font-size: 1.1875rem;
+    cursor: pointer;
+}
+
+#wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+#clockImg {
+    background: url(../images/timer-nobg.png);
+    background-size: cover;
+    width: 6.25rem;
+    height: 6.25rem;
+    z-index: 3;
+}
+
+#wrapper h1 {
+    font-size: 2.375rem;
+    font-weight: 500;
+    margin: 1.875rem 0;
+    color: var(--main-text);
+}
+
+#display {
+    /* position: absolute; */
+    max-width: 30rem;
+    width: 100%;
+    height: min-content;
+    border-radius: 0.5rem;
+    padding: 1.5625rem;
+    margin: 0.5rem auto 0;
+    background-color: #fff;
+    box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    /* backdrop-filter: blur(0.625rem);
+    -webkit-backdrop-filter: blur(0.625rem); */
+}
+
+#display #inputField {
+    position: relative;
+    height: 4rem;
+    width: 100%;
+}
+
+#inputField textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 1.125rem;
+    font-weight: 400;
+    border-radius: 0.5rem;
+    padding: 1.125rem 2.8125rem 1.125rem 0.9375rem;
+    border: 0.0625rem solid #ccc;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#inputField .note-icon {
+    position: absolute;
+    top: 50%;
+    right: 0.9375rem;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 1.5rem;
+    color: var(--note);
+}
+
+#inputField textarea:focus ~ .note-icon {
+    color: var(--main-text);
+}
+
+#toDoList {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#toDoList {
+    width: 100%;
+    max-height: 18.75rem;
+    overflow-y: auto;
+    padding-left: 0;
+}
+
+#toDoList #list {
+    width: 100%;
+    max-width: 25rem;
+    margin: 0.625rem auto;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    background-color: var(--main-color);
+    color: var(--toDo-text);
+    padding: 1.25rem 0.9375rem;
+    border-radius: 0.5rem;
+    margin-top: 0.625rem;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Bezigheden */
+#toDoList #list.school {
+    border: 0.3125rem solid var(--school);
+}
+
+#toDoList #list span.school {
+    background: var(--school) !important;
+}
+
+#toDoList #list.work {
+    border: 0.3125rem solid var(--work);
+}
+
+#toDoList #list span.work {
+    background: var(--work) !important;
+}
+
+#toDoList #list.sport {
+    border: 0.3125rem solid var(--sport);
+}
+
+#toDoList #list span.sport {
+    background: var(--sport) !important;
+}
+
+#toDoList #list.hobby {
+    border: 0.3125rem solid var(--hobby);
+}
+
+#toDoList #list span.hobby {
+    background: var(--hobby) !important;
+}
+
+#toDoList #list.other {
+    border: 0.3125rem solid var(--other);
+}
+
+#toDoList #list span.other {
+    background: var(--other) !important;
+}
+
+#toDoList input {
+    height: 1rem;
+    min-width: 1rem;
+    accent-color: var(--main-color);
+    pointer-events: none;
+    cursor: pointer;
+}
+
+#toDoList #task {
+    margin: 0 1.875rem 0 0.9375rem;
+    word-break: break-all;
+}
+
+#list input:checked ~ #iteminfo #task {
+    text-decoration: line-through;
+}
+
+#toDoList #list i {
+    position: absolute;
+    top: 50%;
+    right: 0.9375rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--toDo-text);
+    padding: 0.3125rem;
+    opacity: 0.6;
+    cursor: pointer;
+    display: none;
+}
+
+#toDoList #list:hover i {
+    display: inline-flex;
+}
+
+#toDoList #list i:hover {
+    opacity: 1;
+}
+
+#display #pendingTasks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.5625rem;
+}
+
+#pendingTasks span {
+    color: var(--main-text);
+}
+
+#pendingTasks #clearButton {
+    padding: 0.375rem 0.75rem;
+    width: 6.25rem;
+    outline: none;
+    border: none;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    pointer-events: none;
+    white-space: nowrap;
+    transition: all ease-in-out 0.2s;
+}
+
+#pendingTasks #clearButton:hover {
+    background-color: var(--main-color-hover);
+}
+
+@media screen and (max-width: 21.875rem) {
+    #display {
+        padding: 1.5625rem 0.625rem;
+    }
+}
+
+section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+section img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section div#stars {
+    position: absolute;
+    background-image: var(--main-img);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+
+section div#moon {
+    position: absolute;
+    background-image: var(--main-obj);
+    background-repeat: no-repeat;
+    background-size: cover;
+    mix-blend-mode: screen;
+    width: 100%;
+    height: 100vh;
+}
+section div#mountains_front {
+    opacity: 1;
+    background-image: var(--main-obj2);
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 0;
+}
+
+#settings {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    color: gray;
+    z-index: 6;
+    background: transparent;
+    border: none;
+    transition: right 1s ease-in-out, color 0.3s ease-in-out,
+        color 0.3s ease-in-out;
+}
+
+#settings:hover {
+    color: darkgray;
+    animation: setting 2s infinite;
+}
+
+@keyframes setting {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.menuDiv button#deleteCookiesBtn {
+    padding: 0.0625rem;
+    padding-left: 0.3125rem;
+    padding-right: 0.3125rem;
+    margin: 0.625rem;
+    background-color: transparent;
+    border: 0.0625rem solid red;
+    color: red;
+    border-radius: 0.3125rem;
+    box-shadow: 0 0 0.1875rem red;
+    transition: all ease-in-out 0.2s;
+}
+.menuDiv button#deleteCookiesBtn:hover {
+    background-color: rgba(255, 0, 0, 0.086);
+}
+.menuDiv button#deleteCookiesBtn:active {
+    background-color: rgba(255, 0, 0, 0.169);
+}
+
+.menuDiv {
+    text-align: center;
+    top: 0.625rem;
+    right: -18.75rem;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 15.625rem;
+    height: 37rem;
+    z-index: 5;
+    background-color: white;
+    color: var(--main-color);
+    box-shadow: 0 0 0.9375rem #a9a9a9;
+    border-radius: 0.9375rem;
+    transition: right 1s ease-in-out;
+    padding: 0.625rem;
+}
+
+.menuDiv h5 {
+    width: 100%;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.625rem;
+    border-bottom: 0.125rem var(--main-color) dashed;
+    text-align: left;
+}
+
+.colors {
+    width: 100%;
+    padding-bottom: 0.625rem;
+    border-bottom: 0.125rem var(--main-color) dashed;
+}
+
+.colors ol {
+    padding-left: 1.25rem;
+    margin: 0;
+}
+
+.colors li {
+    list-style: none;
+    width: 100%;
+    text-align: left;
+    padding: 0.3125rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type="radio"] {
+    margin-left: -0.625rem;
+    cursor: pointer;
+}
+
+#favcolor {
+    margin-left: -1.25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 1.875rem;
+    height: 1.875rem;
+    border: none;
+}
+#favcolor::-webkit-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+#favcolor::-moz-color-swatch {
+    border-radius: 50%;
+    border: none;
+}
+
+#redirection {
+    border-top: 0.125rem dashed red;
+    width: 100%;
+    padding-top: 0.4375rem;
+    color: var(--main-text);
+}
+
+.timed {
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.timed ol {
+    list-style: none;
+    padding: 0;
+    margin-top: -1.25rem;
+    width: 100%;
+}
+
+.timed li {
+    display: flex;
+    align-items: center;
+}
+
+.timed input[type="number"] {
+    width: 3.125rem;
+    margin-right: 0.625rem;
+    padding-left: 0.3125rem;
+    color: var(--main-text);
+    border: 0.0625rem solid var(--main-color);
+    border-radius: 0.3125rem;
+}
+
+.timed button {
+    border: none;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    width: 100%;
+    color: white;
+    background-color: var(--main-color);
+    transition: all ease-in-out 0.2s;
+    border-radius: 0.3125rem;
+}
+
+.timed #pauseBtn {
+    display: none;
+}
+
+.timed button:hover {
+    background-color: var(--main-color-hover);
+}
+
+.timed button:active {
+    background-color: var(--main-color-active);
+}
+
+.timed h6 {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.625rem;
+    font-weight: 500;
+}
+
+#redirection {
+    padding-top: 0.4375rem;
+    color: var(--main-text);
+}
+
+#logButton {
+    font-weight: 600;
+    font-size: 1.5625rem;
+    position: absolute;
+    right: 0.9375rem;
+    color: var(--main-color);
+    background-color: transparent;
+    border: none;
+}
+
+.topMenu {
+    height: 3.125rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#bezigheid {
+    width: 100%;
+    border: 0.0625rem solid var(--main-color);
+    border-radius: 0.3125rem;
+    color: var(--main-text);
+}
+
+.space {
+    width: 40rem;
+}
+
+#filterToDo {
+    background-color: transparent;
+    border: none;
+    color: var(--main-color);
+    font-size: 1.875rem;
+    transition: all ease-in-out 0.2s;
+}
+
+#filterToDo:hover {
+    color: var(--main-color-hover);
+}
+
+.filterDiv h6 {
+    color: var(--main-color-hover);
+}
+
+.filterDiv {
+    top: 37.5rem;
+    left: 65rem;
+    opacity: 0;
+    position: absolute;
+    margin-right: 0.3125rem;
+    background-color: white;
+    height: 7rem;
+    width: 7.5rem;
+    padding: 0.3125rem;
+    z-index: 9;
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.9375rem var(--main-color);
+    color: var(--main-color);
+    transition: all ease-in-out 0.2s;
+}
+
+.selections {
+    display: flex;
+    flex-direction: column;
+}
+
+.selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selection input[type="radio"] {
+    accent-color: var(--main-color);
+    align-self: flex-end;
+}
+
+.options {
+    color: var(--main-color-hover);
+    font-size: small;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.options input[type="checkbox"] {
+    accent-color: var(--main-color);
+    align-self: flex-end;
+    margin-top: 0.3125rem;
+    float: right;
+    margin-left: 0.625rem;
+}
+
+span.none {
+    display: none;
+}
+
+/*
 @media screen and (max-width: 350px) {
     #display {
         padding: 25px 10px;
@@ -567,7 +1231,7 @@ input[type="radio"] {
     position: absolute;
     right: 15px;
     /*height: 30px;*/
-    /*width: 30px;*/
+/*width: 30px;
     color: var(--main-color);
     background-color: transparent;
     border: none;
@@ -636,7 +1300,7 @@ input[type="radio"] {
 }
 
 .selection input[type="radio"] {
-    /* background-color: white; */
+    /* background-color: white;
     accent-color: var(--main-color);
     align-self: flex-end;
 }
@@ -655,10 +1319,10 @@ input[type="radio"] {
     accent-color: var(--main-color);
     align-self: flex-end;
     margin-top: 5px;
-    float: right; /* Lijn de checkbox rechts uit */
+    float: right; /* Lijn de checkbox rechts uit
     margin-left: 10px;
 }
 
 span.none {
     display: none;
-}
+} */
