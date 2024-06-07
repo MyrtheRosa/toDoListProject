@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <header>
     <link rel="stylesheet" href="{{ asset('assets/css/auth/edit.css')}}">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 </header>
 <body>
 <x-app-layout>
@@ -35,5 +36,5 @@
             </div>
         </div>
     </div>
-</body>
 </x-app-layout>
+</body>
