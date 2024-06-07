@@ -1,7 +1,8 @@
+<!DOCTYPE html>
 <header>
     <link rel="stylesheet" href="{{ asset('assets/css/auth/edit.css')}}">
 </header>
-
+<body>
 <x-app-layout>
     <div name="header" class="Nav">
         <h2 class="font-semibold text-xl leading-tight headerText">
@@ -34,4 +35,5 @@
             </div>
         </div>
     </div>
+</body>
 </x-app-layout>
