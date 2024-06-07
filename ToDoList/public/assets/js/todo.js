@@ -208,7 +208,7 @@ filterRadios.forEach(function (radio) {
                 option.appendChild(div5);
             });
         } else {
-            filterDiv.style.height = "7rem";
+            filterDiv.style.height = "6rem";
             options.forEach((option) => {
                 option.innerHTML = "";
             });
@@ -219,13 +219,11 @@ filterRadios.forEach(function (radio) {
         todos.forEach(function (todo) {
             const todoValue = todo.getAttribute("data-bezigheid");
             if (todoValue === selectedFilter || selectedFilter === "none") {
-                todo.style.display = "block"; // Toon de todo
-            } else if (selectedFilter === "alpha") {
-                //
+                todo.style.display = "block";
             } else if (selectedFilter === "tags") {
-                todo.style.display = "block"; // Toon de todo
+                todo.style.display = "block";
             } else {
-                todo.style.display = "none"; // Verberg de todo
+                todo.style.display = "none";
             }
         });
     });

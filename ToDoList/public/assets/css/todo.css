@@ -583,13 +583,14 @@ label {
     color: var(--main-text);
     border: 1px solid var(--main-color);
     border-radius: 5px;
+    cursor: pointer;
 }
 
 #filterToDo {
     background-color: transparent;
     border: none;
     color: var(--main-color);
-    font-size: 30px;
+    font-size: 1.875rem;
     transition: all ease-in-out 0.2s;
 }
 
@@ -602,22 +603,21 @@ label {
 }
 
 .filterDiv {
-    top: 27.5rem;
+    bottom: 22.5rem;
     left: 50rem;
     opacity: 0;
     position: absolute;
-    margin-right: 5px;
+    margin-right: 0.3125rem;
     background-color: white;
-    height: 7rem;
+    height: 6rem;
     width: 7.5rem;
-    padding: 5px;
+    padding: 0.3125rem;
     z-index: 9;
-    border-radius: 10px;
-    box-shadow: 0 0 15px var(--main-color);
+    border-radius: 0.625rem;
+    box-shadow: 0 0 0.9375rem var(--main-color);
     color: var(--main-color);
     transition: all ease-in-out 0.2s;
 }
-
 .selections {
     display: flex;
     flex-direction: column;
@@ -630,6 +630,7 @@ label {
 }
 
 .selection input[type="radio"] {
+    accent-color: var(--main-color);
     align-self: flex-end;
 }
 
@@ -644,12 +645,31 @@ label {
 }
 
 .options input[type="checkbox"] {
+    accent-color: var(--main-color);
     align-self: flex-end;
-    margin-top: 5px;
-    float: right; /* Lijn de checkbox rechts uit */
-    margin-left: 10px;
+    margin-top: 0.3125rem;
+    float: right;
+    margin-left: 0.625rem;
 }
 
 span.none {
     display: none;
+}
+
+.bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.bar label {
+    color: var(--main-color);
+}
+
+#charFullLabel {
+    color: var(--main-color);
+}
+
+#todoFullLabel {
+    color: var(--main-color);
 }

@@ -584,6 +584,7 @@ input[type="radio"] {
     border: 0.0625rem solid var(--main-color);
     border-radius: 0.3125rem;
     color: var(--main-text);
+    cursor: pointer;
 }
 
 .space {
@@ -613,7 +614,7 @@ input[type="radio"] {
     position: absolute;
     margin-right: 0.3125rem;
     background-color: white;
-    height: 7rem;
+    height: 6rem;
     width: 7.5rem;
     padding: 0.3125rem;
     z-index: 9;

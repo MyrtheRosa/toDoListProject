@@ -91,14 +91,11 @@
                         <input type="radio" name="filterList" class="filter" id="none" value="none" checked>
                     </div>
                     <div class="selection">
-                        <label for="Alphabetic">Alphabetic</label>
-                        <input type="radio" name="filterList" class="filter" value="alpha" id="Alphabetic">
-                    </div>
-                    <div class="selection">
                         <label for="Tags">Tags</label>
                         <input type="radio" name="filterList" class="filter" value="tags" id="Tags">
 
                     </div>
+                    <br>
                     <div class="options"></div>
                 </div>
             </div>
