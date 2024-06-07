@@ -73,7 +73,7 @@ body {
     opacity: 0;
     position: absolute;
     top: 18rem;
-    right: 23rem;
+    left: 15.5rem;
     bottom: 5rem;
     z-index: 0;
     transition: all ease-in-out 0.4s;
@@ -81,7 +81,7 @@ body {
 
 .container1 img:hover ~ h1 {
     opacity: 1;
-    top: 12rem;
+    top: 15rem;
     bottom: 5rem;
 }
 
@@ -106,8 +106,8 @@ body {
 .container2 h1 {
     opacity: 0;
     position: absolute;
-    top: 18rem;
-    left: 21rem;
+    top: 20rem;
+    right: 14.5rem;
     bottom: 5rem;
     z-index: 0;
     transition: all ease-in-out 0.4s;
@@ -115,7 +115,7 @@ body {
 
 .container2 img:hover ~ h1 {
     opacity: 1;
-    top: 12rem;
+    top: 15rem;
     bottom: 5rem;
 }
 

@@ -471,19 +471,6 @@ function deleteTask(e) {
     checkTodoCount();
 }
 
-// function removeFromSavedTasks(taskToRemove) {
-
-//     const loadedCookie = getCookie("myTODOs");
-//     if (loadedCookie == getCookie("myTODOs")) {
-//         let todos = JSON.parse(loadedCookie);
-//         const taskId = taskToRemove.id;
-//         todos = todos.filter((task) => task.title !== taskId);
-//         const myJson = JSON.stringify(todos);
-//         document.cookie =
-//             "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC";
-//     }
-// }
-
 function removeFromSavedTasks(taskToRemove) {
     const loadedCookie = getCookie("myTODOs");
     if (loadedCookie == getCookie("myTODOs")) {
