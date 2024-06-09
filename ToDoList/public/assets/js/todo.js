@@ -129,7 +129,7 @@ filterRadios.forEach(function (radio) {
         const options = document.querySelectorAll(".options");
 
         if (radio.value === "tags") {
-            filterDiv.style.height = "13rem";
+            filterDiv.style.height = "14rem";
             options.forEach((option) => {
                 const div1 = document.createElement("div");
                 const input1 = document.createElement("input");
@@ -208,7 +208,7 @@ filterRadios.forEach(function (radio) {
                 option.appendChild(div5);
             });
         } else {
-            filterDiv.style.height = "6rem";
+            filterDiv.style.height = "7rem";
             options.forEach((option) => {
                 option.innerHTML = "";
             });
