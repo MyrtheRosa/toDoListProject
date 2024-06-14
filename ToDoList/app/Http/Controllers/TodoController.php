@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
@@ -48,7 +49,7 @@ class TodoController extends Controller
         $todo = \App\Models\Todo::find($id);
 
         if ($todo) {
-            return view('todo', ['todo' => $todo]);
+            return view('edit', ['todo' => $todo]);
         }
 
         return redirect('/todo')->with('error', 'Todo not found');
@@ -59,14 +60,12 @@ class TodoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $todo = \App\Models\Todo::find($id);
+        $todo = Todo::find($id);
+        $todo ->title = $request->title;
+        $todo ->description = $request->description;
+        $todo->save();
 
-        if (!$todo) {
-            $todo->update($request->all());
-            return redirect('/todo');
-        }
-
-        return redirect('/todo')->with('error', 'Todo not found');
+        return redirect('/todo');
     }
 
     /**

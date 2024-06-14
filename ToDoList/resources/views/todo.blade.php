@@ -87,14 +87,14 @@
         <ul>
             @foreach ($todos as $todo)
                 <li>
-                    <strong class="todo-title">{{ $todo->title }}</strong>
-                    <p class="todo-description">{{ $todo->description }}</p>
-                    <form action="/todo/{{ $todo->id }}" method="POST" class="delete-form">
+                    <strong>{{ $todo->title }}</strong>
+                    <p>{{ $todo->description }}</p>
+                    <form action="/todo/{{ $todo->id }}" method="POST">
                         @csrf
                         @method('DELETE')
                         <button type="submit">Delete</button>
                     </form>
-                    <button class="edit-button">Edit</button>
+                    <button onclick="window.location='/todo/{{ $todo->id }}/edit'">Edit</button>
                 </li>
             @endforeach
         </ul>
