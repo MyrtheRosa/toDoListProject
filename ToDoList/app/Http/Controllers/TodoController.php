@@ -11,7 +11,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //
+        $todos = \App\Models\Todo::all();
+        return view('todo',['todos' => $todos]);
     }
 
     /**
@@ -27,7 +28,8 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $todo = \App\Models\Todo::create($request->all());
+        return redirect()->route('/todo');
     }
 
     /**
@@ -51,7 +53,14 @@ class TodoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $todo = \App\Models\Todo::find($id);
+
+        if (!$todo) {
+            $todo->update($request->all());
+            return redirect('/todo');
+        }
+
+        return redirect('/todo')->with('error', 'Todo not found');
     }
 
     /**
@@ -59,6 +68,13 @@ class TodoController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $todo = \App\Models\Todo::find($id);
+
+        if($todo){
+            $todo->delete();
+            return redirect('/todo');
+        }
+
+        return redirect('/todo')->with('error', 'Todo not found');
     }
 }

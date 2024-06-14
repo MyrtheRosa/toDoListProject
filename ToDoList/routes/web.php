@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,10 @@ Route::get('/todo/timer', function () {
     return view('todotimer');
 })->middleware(['auth', 'verified'])->name('todotimer');
 
+Route::get('/todo', [TodoController::class, 'index']);
+Route::post('/todo', [TodoController::class, 'store']);
+Route::put('/todo/{id}', [TodoController::class, 'update']);
+Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
