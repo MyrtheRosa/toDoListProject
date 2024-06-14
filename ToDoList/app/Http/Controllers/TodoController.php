@@ -12,8 +12,8 @@ class TodoController extends Controller
      */
     public function index()
     {
-        $todos = \App\Models\Todo::all();
-        return view('todo',['todos' => $todos]);
+        $todos = auth()->user()->todos;
+        return view('todo', ['todos' => $todos]);
     }
 
     /**
@@ -29,7 +29,12 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
-        $todo = \App\Models\Todo::create($request->all());
+        $todo = new Todo;
+        $todo->title = $request->title;
+        $todo->description = $request->description;
+        $todo->user_id = auth()->id();
+        $todo->save();
+
         return redirect('/todo');
     }
 
