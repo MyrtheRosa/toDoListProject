@@ -68,18 +68,16 @@
             @csrf
             <input type="text" name="title" placeholder="Enter your to-do title">
             <textarea name="description" placeholder="Enter your new to-do"></textarea>
+            <select name="bezigheid">
+                <option value="school">School</option>
+                <option value="werk">Werk</option>
+                <option value="huis">Huis</option>
+                <option value="vrije tijd">Vrije Tijd</option>
+                <option value="anders">Anders</option>
+            </select>
             <button type="submit">Add Todo</button>
         </form>
-        <div id="inputField">
-            <label for="bezigheid">What are you doing?</label>
-            <select name="bezigheid" id="bezigheid">
-                <option value="school">School</option>
-                <option value="work">Work</option>
-                <option value="sport">Sport</option>
-                <option value="hobby">Hobby</option>
-                <option value="other" selected>Other</option>
-            </select>
-        </div>
+        </form>
         <div class="bar">
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
         <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
@@ -89,6 +87,7 @@
                 <li>
                     <strong>{{ $todo->title }}</strong>
                     <p>{{ $todo->description }}</p>
+                    <p>Bezigheid: {{ $todo->bezigheid }}</p>
                     <form action="/todo/{{ $todo->id }}" method="POST">
                         @csrf
                         @method('DELETE')

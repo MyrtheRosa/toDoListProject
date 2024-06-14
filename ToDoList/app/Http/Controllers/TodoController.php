@@ -10,9 +10,14 @@ class TodoController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $todos = auth()->user()->todos;
+        $bezigheid = $request->get('bezigheid');
+
+        $todos = auth()->user()->todos()->when($bezigheid, function ($query, $bezigheid) {
+            return $query->where('bezigheid', $bezigheid);
+        })->get();
+
         return view('todo', ['todos' => $todos]);
     }
 
@@ -29,9 +34,15 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            // other validation rules...
+        ]);
+
         $todo = new Todo;
         $todo->title = $request->title;
         $todo->description = $request->description;
+        $todo->bezigheid = $request->bezigheid;
         $todo->user_id = auth()->id();
         $todo->save();
 
