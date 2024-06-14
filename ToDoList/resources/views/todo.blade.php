@@ -64,15 +64,12 @@
     </div>
 
     <div id="display">
-        <div id="inputField">
-            <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
-            <i class="uil uil-notes note-icon"></i>
-        </div>
-        <br>
-        <div id="inputField">
-            <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
-            <label id="charFullLabel" style="position: absolute;bottom:0.2rem;right:0.2rem;" ><span id="charCount">0</span>/75</label>
-        </div>
+        <form action="/todo" method="POST">
+            @csrf
+            <input type="text" name="title" placeholder="Enter your to-do title">
+            <textarea name="description" placeholder="Enter your new to-do"></textarea>
+            <button type="submit">Add Todo</button>
+        </form>
         <div id="inputField">
             <label for="bezigheid">What are you doing?</label>
             <select name="bezigheid" id="bezigheid">
@@ -87,7 +84,20 @@
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
         <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
         </div>
-        <ul id="toDoList"></ul>
+        <ul>
+            @foreach ($todos as $todo)
+                <li>
+                    <strong class="todo-title">{{ $todo->title }}</strong>
+                    <p class="todo-description">{{ $todo->description }}</p>
+                    <form action="/todo/{{ $todo->id }}" method="POST" class="delete-form">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit">Delete</button>
+                    </form>
+                    <button class="edit-button">Edit</button>
+                </li>
+            @endforeach
+        </ul>
         <div id="pendingTasks">
             <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>
             <button id="clearButton" disabled>Clear All</button>

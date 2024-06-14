@@ -29,7 +29,7 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         $todo = \App\Models\Todo::create($request->all());
-        return redirect()->route('/todo');
+        return redirect('/todo');
     }
 
     /**
@@ -45,7 +45,13 @@ class TodoController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $todo = \App\Models\Todo::find($id);
+
+        if ($todo) {
+            return view('todo', ['todo' => $todo]);
+        }
+
+        return redirect('/todo')->with('error', 'Todo not found');
     }
 
     /**

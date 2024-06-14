@@ -35,6 +35,7 @@ Route::get('/todo', [TodoController::class, 'index']);
 Route::post('/todo', [TodoController::class, 'store']);
 Route::put('/todo/{id}', [TodoController::class, 'update']);
 Route::delete('/todo/{id}', [TodoController::class, 'destroy']);
+Route::get('/todo/{id}/edit', [TodoController::class, 'edit']);
 
 Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
 
