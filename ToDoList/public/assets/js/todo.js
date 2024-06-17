@@ -489,24 +489,6 @@ function clear(event) {
 }
 clearButton.addEventListener("click", clear);
 
-// function saveToCookie() {
-//     let toDo = document.querySelectorAll("#toDoList li");
-
-//     const itemsToSave = [];
-//     toDo.forEach((item) => {
-//         itemsToSave.push({
-//             title: item.querySelector("h5").innerHTML,
-//             para: item.querySelector("p").innerHTML,
-//             checked: item.querySelector("input").checked,
-//             bezigheid: item.getAttribute("data-bezigheid"),
-//         });
-//     });
-
-//     const myJson = JSON.stringify(itemsToSave);
-//     document.cookie =
-//         "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
-// }
-
 function getAllTodos() {
     axios
         .get("/todo")
@@ -519,40 +501,49 @@ function getAllTodos() {
         });
 }
 
+function deleteRequest(id) {
+    axios
+        .delete(`/todo/delete/${id}`)
+        .then((response) => {
+            console.log("Data verwijderd van API:", response.data);
+            getAllTodos();
+        })
+        .catch((error) => {
+            console.error(error);
+        });
+}
+
 function loadFromCookie(todos) {
     toDoList.innerHTML = "";
 
     todos.forEach((task) => {
         console.log(task);
-        let liTag = `<li id="list" class="${task.checked ? "" : "pending"} ${
+        let liTag = `<li id="list" class="${task.completed ? "" : "pending"} ${
             task.bezigheid || "none"
-        }" data-bezigheid="${
-            task.bezigheid || "none"
-        }" onclick="handleStatus(this)">
-            <input type="checkbox" ${task.checked ? "checked" : ""} />
+        }" data-bezigheid="${task.bezigheid || "none"}"
+        data-id=${task.id} onclick="handleStatus(this)">
+            <input type="checkbox" ${task.completed ? "checked" : ""} />
             <div id="iteminfo">
             <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${
                 task.bezigheid
             }">${task.bezigheid}</span>
             <h5 id="task"><b>${task.title}</b></h5>
-            <p id="task">${task.description}</p>
+            <p id="task">${task.description ? task.description : ""}</p>
             </div>
             <i class="uil uil-edit edit" onclick="window.location='/todo/${
                 task.id
             }/edit'"></i>
-            <i class="uil uil-trash delete" onclick="window.location='/todo/${
+            <i class="uil uil-trash delete" onclick='deleteRequest(${
                 task.id
-            }/delete'"></i>
+            })'></i>
             </li>`;
 
         toDoList.insertAdjacentHTML("beforeend", liTag);
     });
 
-    // Roep een functie aan om alle taken bij te werken (indien nodig)
     allTasks();
 }
 
-// Roep getAllTodos aan zodra het document geladen is
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Document is geladen");
     getAllTodos();
@@ -614,7 +605,6 @@ function getCookie(cname) {
     }
     return "";
 }
-loadFromCookie();
 
 document
     .getElementById("deleteCookiesBtn")

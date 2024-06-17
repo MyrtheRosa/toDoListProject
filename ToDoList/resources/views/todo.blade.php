@@ -78,26 +78,11 @@
             </select>
             <button type="submit" id="addTodoButton">Add Todo</button>
         </form>
-        </form>
         <div class="bar">
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
         <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
         </div>
-        <ul id="toDoList">
-            {{-- @foreach ($todos as $todo)
-                <li class="{{ $todo->bezigheid}}">
-                    <strong>{{ $todo->title }}</strong>
-                    <p>{{ $todo->description }}</p>
-                    <p>Bezigheid: {{ $todo->bezigh\d }}</p>
-                    <form action="/todo/{{ $todo->id }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit">Delete</button>
-                    </form>
-                    <button onclick="window.location='/todo/{{ $todo->id }}/edit'">Edit</button>
-                </li>
-            @endforeach --}}
-        </ul>
+        <ul id="toDoList"></ul>
         <div id="pendingTasks">
             <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>
             <button id="clearButton" disabled>Clear All</button>

@@ -95,10 +95,21 @@ class TodoController extends Controller
         $todo = \App\Models\Todo::find($id);
 
         if($todo){
-            $todo->delete();
-            return redirect('/todo');
+            return $todo;
         }
 
-        return redirect('/todo')->with('error', 'Todo not found');
+        return redirect('/todos')->with('error', 'Todo not found');
     }
+    public function delete(string $id)
+    {
+        $todo = \App\Models\Todo::find($id);
+
+        if($todo){
+            $todo->delete();
+            return redirect('/todos');
+        }
+
+        return redirect('/todos')->with('error', 'Todo not found');
+    }
+
 }

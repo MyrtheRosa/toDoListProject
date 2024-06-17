@@ -69,7 +69,7 @@
                 </ol>
             </div>
             <button id="deleteCookiesBtn">Remove ALL ToDo cookies</button>
-            <a href="../todo" id="redirection">Go To Non Timed ToDo</a>
+            <a href="../todos" id="redirection">Go To Non Timed ToDo</a>
         </div>
 
         {{-- ToDo Section --}}
