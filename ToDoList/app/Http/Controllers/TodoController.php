@@ -18,7 +18,10 @@ class TodoController extends Controller
             return $query->where('bezigheid', $bezigheid);
         })->get();
 
-        return view('todo', ['todos' => $todos]);
+    //    return view('todo', ['todos' => $todos]);
+    //    return $todos;
+    // return json_encode($todos);
+    return response()->json($todos);
     }
 
     /**
@@ -46,7 +49,7 @@ class TodoController extends Controller
         $todo->user_id = auth()->id();
         $todo->save();
 
-        return redirect('/todo');
+        return redirect('/todos');
     }
 
     /**
@@ -68,7 +71,7 @@ class TodoController extends Controller
             return view('edit', ['todo' => $todo]);
         }
 
-        return redirect('/todo')->with('error', 'Todo not found');
+        return redirect('/todos')->with('error', 'Todo not found');
     }
 
     /**

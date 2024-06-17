@@ -13,11 +13,11 @@ const filterDiv = document.querySelector(".filterDiv");
 
 const options = document.querySelectorAll(".options");
 
-const charCountLabel = document.getElementById("charCount");
-const todoCountLabel = document.getElementById("todoCount");
+// const charCountLabel = document.getElementById("charCount");
+// const todoCountLabel = document.getElementById("todoCount");
 
-const MAX_TOTAL_LENGTH = 74;
-const MAX_TODO_COUNT = 5;
+// const MAX_TOTAL_LENGTH = 74;
+// const MAX_TODO_COUNT = 5;
 
 settings.addEventListener("click", function () {
     if (settingDiv.style.right === "10px") {
@@ -57,67 +57,67 @@ if (filterDiv.style.left === "50rem") {
     });
 }
 
-inputField.addEventListener("input", checkTotalLength);
-inputTitleField.addEventListener("input", checkTotalLength);
+// inputField.addEventListener("input", checkTotalLength);
+// inputTitleField.addEventListener("input", checkTotalLength);
 
-function checkTotalLength() {
-    const charFullLabel = document.getElementById("charFullLabel");
-    const totalLength = inputField.value.length + inputTitleField.value.length;
+// function checkTotalLength() {
+//     const charFullLabel = document.getElementById("charFullLabel");
+//     const totalLength = inputField.value.length + inputTitleField.value.length;
 
-    if (totalLength >= MAX_TOTAL_LENGTH) {
-        inputField.value = inputField.value.slice(
-            0,
-            MAX_TOTAL_LENGTH - inputTitleField.value.length
-        );
-        inputTitleField.value = inputTitleField.value.slice(
-            0,
-            MAX_TOTAL_LENGTH - inputField.value.length
-        );
-        charFullLabel.style.color = "darkred";
-    } else if (totalLength >= 70 && totalLength <= 74) {
-        charFullLabel.style.color = "red";
-    } else if (totalLength >= 50 && totalLength < 70) {
-        charFullLabel.style.color = "orange";
-    } else {
-        charFullLabel.style.color = "var(--main-color)";
-    }
-    charCountLabel.textContent = `${totalLength}`;
-}
+//     if (totalLength >= MAX_TOTAL_LENGTH) {
+//         inputField.value = inputField.value.slice(
+//             0,
+//             MAX_TOTAL_LENGTH - inputTitleField.value.length
+//         );
+//         inputTitleField.value = inputTitleField.value.slice(
+//             0,
+//             MAX_TOTAL_LENGTH - inputField.value.length
+//         );
+//         charFullLabel.style.color = "darkred";
+//     } else if (totalLength >= 70 && totalLength <= 74) {
+//         charFullLabel.style.color = "red";
+//     } else if (totalLength >= 50 && totalLength < 70) {
+//         charFullLabel.style.color = "orange";
+//     } else {
+//         charFullLabel.style.color = "var(--main-color)";
+//     }
+//     charCountLabel.textContent = `${totalLength}`;
+// }
 
-inputField.addEventListener("input", checkTotalLength);
-inputTitleField.addEventListener("input", checkTotalLength);
+// inputField.addEventListener("input", checkTotalLength);
+// inputTitleField.addEventListener("input", checkTotalLength);
 
-function checkTodoCount() {
-    const todoFullLabel = document.getElementById("todoFullLabel");
-    const todoCount = toDoList.children.length;
+// function checkTodoCount() {
+//     const todoFullLabel = document.getElementById("todoFullLabel");
+//     const todoCount = toDoList.children.length;
 
-    if (todoCount >= MAX_TODO_COUNT) {
-        inputField.disabled = true;
-        inputTitleField.disabled = true;
-        inputField.value = "";
-        inputTitleField.value = "";
-        todoCountLabel.textContent = `${MAX_TODO_COUNT}`;
-        todoFullLabel.style.color = "darkred";
-    } else if (todoCount === 4 && todoCount < 5) {
-        inputField.disabled = false;
-        inputTitleField.disabled = false;
-        todoCountLabel.textContent = `${todoCount}`;
-        todoFullLabel.style.color = "red";
-    } else if (todoCount === 3 && todoCount < 4) {
-        inputField.disabled = false;
-        inputTitleField.disabled = false;
-        todoCountLabel.textContent = `${todoCount}`;
-        todoFullLabel.style.color = "orange";
-    } else {
-        inputField.disabled = false;
-        inputTitleField.disabled = false;
-        todoFullLabel.style.color = "var(--main-color)";
-        todoCountLabel.textContent = `${todoCount}`;
-    }
-}
+//     if (todoCount >= MAX_TODO_COUNT) {
+//         inputField.disabled = true;
+//         inputTitleField.disabled = true;
+//         inputField.value = "";
+//         inputTitleField.value = "";
+//         todoCountLabel.textContent = `${MAX_TODO_COUNT}`;
+//         todoFullLabel.style.color = "darkred";
+//     } else if (todoCount === 4 && todoCount < 5) {
+//         inputField.disabled = false;
+//         inputTitleField.disabled = false;
+//         todoCountLabel.textContent = `${todoCount}`;
+//         todoFullLabel.style.color = "red";
+//     } else if (todoCount === 3 && todoCount < 4) {
+//         inputField.disabled = false;
+//         inputTitleField.disabled = false;
+//         todoCountLabel.textContent = `${todoCount}`;
+//         todoFullLabel.style.color = "orange";
+//     } else {
+//         inputField.disabled = false;
+//         inputTitleField.disabled = false;
+//         todoFullLabel.style.color = "var(--main-color)";
+//         todoCountLabel.textContent = `${todoCount}`;
+//     }
+// }
 
-inputField.addEventListener("input", checkTodoCount);
-inputTitleField.addEventListener("input", checkTodoCount);
+// inputField.addEventListener("input", checkTodoCount);
+// inputTitleField.addEventListener("input", checkTodoCount);
 
 const filterRadios = document.querySelectorAll(".filterDiv input.filter");
 filterRadios.forEach(function (radio) {
@@ -424,28 +424,28 @@ function addSpecialTask(inputVal, inputTitleVal, bezigheid) {
         inputTitleField.value = "";
         bezigheidList.value = "other";
         allTasks();
-        saveToCookie();
+        // saveToCookie();
     }
 }
 
-function inputOnClick(event) {
-    let inputVal = inputField.value.trim();
-    let inputTitleVal = inputTitleField.value.trim();
-    let bezigheid = bezigheidList.value.trim();
+// function inputOnClick(event) {
+//     let inputVal = inputField.value.trim();
+//     let inputTitleVal = inputTitleField.value.trim();
+//     let bezigheid = bezigheidList.value.trim();
 
-    if (
-        (event.key === "Enter" && inputTitleVal.length > 0) ||
-        (event.key === "Enter" &&
-            inputVal.length > 0 &&
-            inputVal.includes("!DESC!"))
-    ) {
-        addSpecialTask(inputVal, inputTitleVal, bezigheid);
-    }
-}
+//     if (
+//         (event.key === "Enter" && inputTitleVal.length > 0) ||
+//         (event.key === "Enter" &&
+//             inputVal.length > 0 &&
+//             inputVal.includes("!DESC!"))
+//     ) {
+//         addSpecialTask(inputVal, inputTitleVal, bezigheid);
+//     }
+// }
 
-inputField.addEventListener("keyup", inputOnClick);
-inputTitleField.addEventListener("keyup", inputOnClick);
-bezigheidList.addEventListener("keyup", inputOnClick);
+// inputField.addEventListener("keyup", inputOnClick);
+// inputTitleField.addEventListener("keyup", inputOnClick);
+// bezigheidList.addEventListener("keyup", inputOnClick);
 
 function handleStatus(e) {
     const checkbox = e.querySelector("input");
@@ -456,14 +456,14 @@ function handleStatus(e) {
     }
     e.classList.toggle("pending");
     allTasks();
-    saveToCookie();
+    // saveToCookie();
 }
 
 function deleteTask(e) {
     const taskToRemove = e.parentElement;
     taskToRemove.remove();
     allTasks();
-    saveToCookie();
+    // saveToCookie();
 
     removeFromSavedTasks(taskToRemove);
     checkTodoCount();
@@ -484,57 +484,120 @@ function removeFromSavedTasks(taskToRemove) {
 function clear(event) {
     toDoList.innerHTML = " ";
     allTasks();
-    saveToCookie();
+    // saveToCookie();
     checkTodoCount();
 }
 clearButton.addEventListener("click", clear);
 
-function saveToCookie() {
-    let toDo = document.querySelectorAll("#toDoList li");
+// function saveToCookie() {
+//     let toDo = document.querySelectorAll("#toDoList li");
 
-    const itemsToSave = [];
-    toDo.forEach((item) => {
-        itemsToSave.push({
-            title: item.querySelector("h5").innerHTML,
-            para: item.querySelector("p").innerHTML,
-            checked: item.querySelector("input").checked,
-            bezigheid: item.getAttribute("data-bezigheid"),
+//     const itemsToSave = [];
+//     toDo.forEach((item) => {
+//         itemsToSave.push({
+//             title: item.querySelector("h5").innerHTML,
+//             para: item.querySelector("p").innerHTML,
+//             checked: item.querySelector("input").checked,
+//             bezigheid: item.getAttribute("data-bezigheid"),
+//         });
+//     });
+
+//     const myJson = JSON.stringify(itemsToSave);
+//     document.cookie =
+//         "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
+// }
+
+function getAllTodos() {
+    axios
+        .get("/todo")
+        .then((response) => {
+            console.log("Data ontvangen van API:", response.data);
+            loadFromCookie(response.data);
+        })
+        .catch((error) => {
+            console.error("Fout bij het ophalen van data:", error);
         });
-    });
-
-    const myJson = JSON.stringify(itemsToSave);
-    document.cookie =
-        "myTODOs=" + myJson + "; expires=1 jan 2050 12:00:00 UTC; path=/";
 }
 
-function loadFromCookie() {
-    const loadedCookie = getCookie("myTODOs");
-    if (loadedCookie == getCookie("myTODOs")) {
-        toDoList.innerHTML = "";
+function loadFromCookie(todos) {
+    toDoList.innerHTML = "";
 
-        const todos = JSON.parse(loadedCookie);
-        todos.forEach((task) => {
-            let liTag = `<li id="list" class="${
-                task.checked ? "" : "pending"
-            } ${task.bezigheid || "none"}" data-bezigheid="${
-                task.bezigheid || "none"
-            }" onclick="handleStatus(this)">
+    todos.forEach((task) => {
+        console.log(task);
+        let liTag = `<li id="list" class="${task.checked ? "" : "pending"} ${
+            task.bezigheid || "none"
+        }" data-bezigheid="${
+            task.bezigheid || "none"
+        }" onclick="handleStatus(this)">
             <input type="checkbox" ${task.checked ? "checked" : ""} />
             <div id="iteminfo">
             <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${
                 task.bezigheid
             }">${task.bezigheid}</span>
             <h5 id="task"><b>${task.title}</b></h5>
-            <p id="task">${task.para}</p>
+            <p id="task">${task.description}</p>
             </div>
-            <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
+            <i class="uil uil-edit edit" onclick="window.location='/todo/${
+                task.id
+            }/edit'"></i>
+            <i class="uil uil-trash delete" onclick="window.location='/todo/${
+                task.id
+            }/delete'"></i>
             </li>`;
 
-            toDoList.insertAdjacentHTML("beforeend", liTag);
-        });
-    }
+        toDoList.insertAdjacentHTML("beforeend", liTag);
+    });
+
+    // Roep een functie aan om alle taken bij te werken (indien nodig)
     allTasks();
 }
+
+// Roep getAllTodos aan zodra het document geladen is
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Document is geladen");
+    getAllTodos();
+});
+
+// function getAllTodos() {
+//     axios.get("/todo").then((response) => {
+//         console.log("Data ontvangen van API:", response.data);
+//     });
+// }
+
+// // function saveTodo() {
+// //     axios.post("/api/todos/store")
+// //     });
+// // }
+
+// function loadFromCookie() {
+//     getAllTodos();
+//     // const loadedCookie = getCookie("myTODOs");
+//     // if (loadedCookie == getCookie("myTODOs")) {
+//     toDoList.innerHTML = "";
+
+//     const todos = response.data;
+//     todos.forEach((task) => {
+//         let liTag = `<li id="list" class="${task.checked ? "" : "pending"} ${
+//             task.bezigheid || "none"
+//         }" data-bezigheid="${
+//             task.bezigheid || "none"
+//         }" onclick="handleStatus(this)">
+//             <input type="checkbox" ${task.checked ? "checked" : ""} />
+//             <div id="iteminfo">
+//             <span class="position-absolute top-0 start-120 translate-middle badge rounded-pill ${
+//                 task.bezigheid
+//             }">${task.bezigheid}</span>
+//             <h5 id="task"><b>${task.title}</b></h5>
+//             <p id="task">${task.para}</p>
+//             </div>
+//             <i class="uil uil-trash" onclick="deleteTask(this)" ></i>
+//             </li>`;
+
+//         toDoList.insertAdjacentHTML("beforeend", liTag);
+//     });
+//     // }
+//     allTasks();
+// }
 
 function getCookie(cname) {
     let name = cname + "=";

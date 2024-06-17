@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/todo', function () {
+Route::get('/todos', function () {
     return view('todo');
 })->middleware(['auth', 'verified'])->name('todo');
 

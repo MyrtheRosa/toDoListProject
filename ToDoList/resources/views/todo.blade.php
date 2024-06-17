@@ -7,6 +7,7 @@
     <title>ToDo List</title>
     <link rel="stylesheet" href="{{ asset('assets/css/todo.css') }}">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
@@ -68,26 +69,26 @@
             @csrf
             <input type="text" name="title" placeholder="Enter your to-do title">
             <textarea name="description" placeholder="Enter your new to-do"></textarea>
-            <select name="bezigheid">
+            <select name="bezigheid" id="bezigheid">
                 <option value="school">School</option>
-                <option value="werk">Werk</option>
-                <option value="huis">Huis</option>
-                <option value="vrije tijd">Vrije Tijd</option>
-                <option value="anders">Anders</option>
+                <option value="work">Work</option>
+                <option value="sport">Sport</option>
+                <option value="hobby">Hobby</option>
+                <option value="other" selected>Other</option>
             </select>
-            <button type="submit">Add Todo</button>
+            <button type="submit" id="addTodoButton">Add Todo</button>
         </form>
         </form>
         <div class="bar">
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
         <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
         </div>
-        <ul>
-            @foreach ($todos as $todo)
-                <li>
+        <ul id="toDoList">
+            {{-- @foreach ($todos as $todo)
+                <li class="{{ $todo->bezigheid}}">
                     <strong>{{ $todo->title }}</strong>
                     <p>{{ $todo->description }}</p>
-                    <p>Bezigheid: {{ $todo->bezigheid }}</p>
+                    <p>Bezigheid: {{ $todo->bezigh\d }}</p>
                     <form action="/todo/{{ $todo->id }}" method="POST">
                         @csrf
                         @method('DELETE')
@@ -95,7 +96,7 @@
                     </form>
                     <button onclick="window.location='/todo/{{ $todo->id }}/edit'">Edit</button>
                 </li>
-            @endforeach
+            @endforeach --}}
         </ul>
         <div id="pendingTasks">
             <span class="color-danger">You have <span id="pendingNum">no </span> tasks pending. </span>
