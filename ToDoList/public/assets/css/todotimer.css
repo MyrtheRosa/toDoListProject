@@ -267,10 +267,23 @@ textarea::-webkit-scrollbar {
     text-decoration: line-through;
 }
 
-#toDoList #list i {
+#toDoList #list i.delete {
     position: absolute;
     top: 50%;
     right: 0.9375rem;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: var(--toDo-text);
+    padding: 0.3125rem;
+    opacity: 0.6;
+    cursor: pointer;
+    display: none;
+}
+
+#toDoList #list i.edit {
+    position: absolute;
+    top: 50%;
+    right: 2.9375rem;
     transform: translateY(-50%);
     font-size: 1.5rem;
     color: var(--toDo-text);

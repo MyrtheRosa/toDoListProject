@@ -49,7 +49,7 @@ class TodoController extends Controller
         $todo->user_id = auth()->id();
         $todo->save();
 
-        return redirect('/todos');
+        return redirect()->back();
     }
 
     /**
@@ -71,7 +71,7 @@ class TodoController extends Controller
             return view('edit', ['todo' => $todo]);
         }
 
-        return redirect('/todos')->with('error', 'Todo not found');
+        return redirect()->back()->with('error', 'Todo not found');
     }
 
     /**
@@ -84,7 +84,7 @@ class TodoController extends Controller
         $todo ->description = $request->description;
         $todo->save();
 
-        return redirect('/todo');
+        return redirect('/todos');
     }
 
     /**
@@ -106,7 +106,7 @@ class TodoController extends Controller
 
         if($todo){
             $todo->delete();
-            return redirect('/todos');
+            return redirect()->back();
         }
 
         return redirect('/todos')->with('error', 'Todo not found');

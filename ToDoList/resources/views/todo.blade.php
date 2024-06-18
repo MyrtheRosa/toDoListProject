@@ -91,5 +91,6 @@
 </section>
 
     <script src="{{ asset('assets/js/todo.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -102,7 +103,7 @@
 
 
             <div id="display">
-                <div id="inputField">
+                {{-- <div id="inputField">
                     <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
                     <i class="uil uil-notes note-icon"></i>
                 </div>
@@ -120,7 +121,20 @@
                         <option value="hobby">Hobby</option>
                         <option value="other" selected>Other</option>
                     </select>
-                </div>
+                </div> --}}
+                <form action="/todo" method="POST">
+                    @csrf
+                    <input type="text" name="title" placeholder="Enter your to-do title">
+                    <textarea name="description" placeholder="Enter your new to-do"></textarea>
+                    <select name="bezigheid" id="bezigheid">
+                        <option value="school">School</option>
+                        <option value="work">Work</option>
+                        <option value="sport">Sport</option>
+                        <option value="hobby">Hobby</option>
+                        <option value="other" selected>Other</option>
+                    </select>
+                    <button type="submit" id="addTodoButton">Add Todo</button>
+                </form>
                 <div class="bar">
                     <button id="filterToDo"><i class="bi bi-filter"></i></button>
                     <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
@@ -136,6 +150,7 @@
     </section>
     <script src="{{ asset('assets/js/timer.js') }}"></script>
     <script src="{{ asset('assets/js/todo.js') }}"></script>
+    <script src="{{ asset('assets/js/theme.js') }}"></script>
 </body>
 
 </html>
