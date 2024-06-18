@@ -16,7 +16,7 @@ function setAlarm() {
         setAlarmButton.innerText = "Set Alarm";
         setPauseButton.style.display = "none";
         currentTime.innerText = `${hours}:${minutes}:00`;
-        menuDiv.style.height = "37rem";
+        menuDiv.style.height = "33rem";
         clearInterval(interval);
         return;
     }
@@ -39,7 +39,7 @@ function setAlarm() {
 
     setPauseButton.style.display = "block";
     setAlarmButton.innerText = "Reset Alarm";
-    menuDiv.style.height = "40rem";
+    menuDiv.style.height = "35rem";
 
     interval = setInterval(updateTime, 1000, dateTime);
 }

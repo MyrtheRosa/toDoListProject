@@ -55,7 +55,7 @@
                             name="selectColor" value="Caramel" id="none"></li>
                 </ol>
             </div>
-            <div class="timed" style="border-bottom: 2px dashed red">
+            <div class="timed" style="border-bottom: 2px dashed var(--main-color)">
                 <h5>Change Timer Settings</h5>
                 <ol style="margin-top: -10px">
                     <h6><b>Activity</b></h6>
@@ -69,7 +69,6 @@
                     <button id="pauseBtn">Pause Alarm</button>
                 </ol>
             </div>
-            <button id="deleteCookiesBtn">Remove ALL ToDo cookies</button>
             <a href="../todos" id="redirection">Go To Non Timed ToDo</a>
         </div>
 
@@ -103,29 +102,10 @@
 
 
             <div id="display">
-                {{-- <div id="inputField">
-                    <textarea id="inputTitleArea" placeholder="Enter your to-do title"></textarea>
-                    <i class="uil uil-notes note-icon"></i>
-                </div>
-                <br>
-                <div id="inputField">
-                    <textarea id="inputTextArea" placeholder="Enter your new to-do"></textarea>
-                    <label id="charFullLabel" style="position: absolute;bottom:0.2rem;right:0.2rem;" ><span id="charCount">0</span>/75</label>
-                </div>
-                <div id="inputField">
-                    <label for="bezigheid">What are you doing?</label>
-                    <select name="bezigheid" id="bezigheid">
-                        <option value="school">School</option>
-                        <option value="work">Work</option>
-                        <option value="sport">Sport</option>
-                        <option value="hobby">Hobby</option>
-                        <option value="other" selected>Other</option>
-                    </select>
-                </div> --}}
-                <form action="/todo" method="POST">
+                <form id="sendInfo" action="/todo" method="POST" style="display: flex; flex-direction: column;">
                     @csrf
-                    <input type="text" name="title" placeholder="Enter your to-do title">
-                    <textarea name="description" placeholder="Enter your new to-do"></textarea>
+                    <input class="inputTitleArea" id="inputField" type="text" name="title" placeholder="Enter your to-do title">
+                    <textarea class="inputTextArea" id="inputFieldArea" name="description" placeholder="Enter your new to-do"></textarea>
                     <select name="bezigheid" id="bezigheid">
                         <option value="school">School</option>
                         <option value="work">Work</option>
@@ -137,7 +117,6 @@
                 </form>
                 <div class="bar">
                     <button id="filterToDo"><i class="bi bi-filter"></i></button>
-                    <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
                 </div>
 
                 <ul id="toDoList"></ul>

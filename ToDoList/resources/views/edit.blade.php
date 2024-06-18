@@ -59,7 +59,7 @@
                 @csrf
                 @method('PUT')
                 <label for="title">Title</label>
-                <input type="text" name="title" value="{{ $todo->title }}">
+                <input type="text" name="title" value="{{ $todo->title }}" required>
                 <label for="description">Description</label>
                 <textarea style="" name="description">{{ $todo->description }}</textarea>
                 <button type="submit">Update Todo</button>

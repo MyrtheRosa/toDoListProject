@@ -44,7 +44,6 @@
                 <li><input type="color" id="favcolor" value="#CBAD6E" disabled> Caramel Machiato <input type="radio" name="selectColor" value="Caramel" id="none" ></li>
             </ol>
         </div>
-        <button id="deleteCookiesBtn">Remove ALL ToDo cookies</button>
         <a href="todo/timer" id="redirection">Go To Timed ToDo</a>
     </div>
 
@@ -65,10 +64,10 @@
     </div>
 
     <div id="display">
-        <form action="/todo" method="POST">
+        <form id="sendInfo" action="/todo" method="POST" style="display: flex; flex-direction: column;">
             @csrf
-            <input type="text" name="title" placeholder="Enter your to-do title">
-            <textarea name="description" placeholder="Enter your new to-do"></textarea>
+            <input class="inputTitleArea" id="inputField" type="text" name="title" placeholder="Enter your to-do title">
+            <textarea class="inputTextArea" id="inputFieldArea" name="description" placeholder="Enter your new to-do"></textarea>
             <select name="bezigheid" id="bezigheid">
                 <option value="school">School</option>
                 <option value="work">Work</option>
@@ -80,7 +79,6 @@
         </form>
         <div class="bar">
         <button id="filterToDo"><i class="bi bi-filter"></i></button>
-        <label id="todoFullLabel"><span id="todoCount">0</span>/5</label>
         </div>
         <ul id="toDoList"></ul>
         <div id="pendingTasks">

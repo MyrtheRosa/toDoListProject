@@ -144,20 +144,27 @@ body {
 }
 
 #display #inputField {
+    font-size: 1.125rem;
     position: relative;
     height: 4rem;
     width: 100%;
+    color: var(--main-text);
+    border: 1px solid var(--main-color);
+    padding-left: 1.125rem;
+    border-radius: 0.5rem;
 }
 
-#inputField textarea {
-    height: 100%;
+#inputFieldArea {
     width: 100%;
     outline: none;
-    font-size: 1.125rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1rem;
     font-weight: 400;
     border-radius: 0.5rem;
-    padding: 1.125rem 2.8125rem 1.125rem 0.9375rem;
-    border: 0.0625rem solid #ccc;
+    padding: 1.125rem 1.8125rem 0 0.9375rem;
+    color: var(--main-text);
+    border: 0.0625rem solid var(--main-color);
     resize: none;
 }
 
@@ -413,25 +420,6 @@ section div#mountains_front {
     }
 }
 
-.menuDiv button#deleteCookiesBtn {
-    padding: 0.0625rem;
-    padding-left: 0.3125rem;
-    padding-right: 0.3125rem;
-    margin: 0.625rem;
-    background-color: transparent;
-    border: 0.0625rem solid red;
-    color: red;
-    border-radius: 0.3125rem;
-    box-shadow: 0 0 0.1875rem red;
-    transition: all ease-in-out 0.2s;
-}
-.menuDiv button#deleteCookiesBtn:hover {
-    background-color: rgba(255, 0, 0, 0.086);
-}
-.menuDiv button#deleteCookiesBtn:active {
-    background-color: rgba(255, 0, 0, 0.169);
-}
-
 .menuDiv {
     text-align: center;
     top: 0.625rem;
@@ -441,7 +429,7 @@ section div#mountains_front {
     flex-direction: column;
     align-items: flex-start;
     width: 15.625rem;
-    height: 37rem;
+    height: 33rem;
     z-index: 15;
     background-color: white;
     color: var(--main-color);
@@ -504,7 +492,6 @@ input[type="radio"] {
 }
 
 #redirection {
-    border-top: 0.125rem dashed red;
     width: 100%;
     padding-top: 0.4375rem;
     color: var(--main-text);
@@ -598,6 +585,7 @@ input[type="radio"] {
     border-radius: 0.3125rem;
     color: var(--main-text);
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .space {
@@ -691,4 +679,21 @@ span.none {
 
 #todoFullLabel {
     color: var(--main-color);
+}
+
+#addTodoButton {
+    padding: 1rem 1rem 1rem 1rem;
+    background: var(--main-color);
+    color: white;
+    border: 2px solid var(--main-text);
+    border-radius: 10px;
+    transition: all ease-in-out 0.2s;
+}
+
+#addTodoButton:hover {
+    background: var(--main-color-hover);
+}
+
+#addTodoButton:active {
+    background: var(--main-color-active);
 }
