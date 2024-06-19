@@ -192,6 +192,16 @@ function getAllTodos() {
         });
 }
 
+function handleStatus(e) {
+    const checkbox = e.querySelector("input");
+    if (checkbox.checked === false) {
+        checkbox.checked = true;
+    } else if (checkbox.checked === true) {
+        checkbox.checked = false;
+    }
+    e.classList.toggle("pending");
+}
+
 async function clear() {
     // Haal alle taken op
     const response = await axios
