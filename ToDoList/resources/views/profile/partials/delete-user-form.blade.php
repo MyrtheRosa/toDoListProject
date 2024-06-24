@@ -1,10 +1,10 @@
 <section class="space-y-6">
     <header>
-        <h2 class="text-lg font-medium big">
+        <h2 class="text-lg font-medium text-gray-900">
             {{ __('Delete Account') }}
         </h2>
 
-        <p class="mt-1 text-sm tiny">
+        <p class="mt-1 text-sm text-gray-600">
             {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.') }}
         </p>
     </header>
@@ -28,7 +28,7 @@
             </p>
 
             <div class="mt-6">
-                <x-input-label class="text-zinc-300" for="password" value="{{ __('Password') }}" class="sr-only" />
+                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
 
                 <x-text-input
                     id="password"

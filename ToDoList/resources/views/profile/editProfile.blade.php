@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<header>
-    <link rel="stylesheet" href="{{ asset('assets/css/auth/edit.css')}}">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ asset('assets/css/auth/edit.css') }}">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-</header>
+    <link rel="stylesheet" href="{{ asset('assets/css/app.css')}}">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/alpine.min.js" defer></script>
+
+</head>
 <body>
-<x-app-layout>
     <div name="header" class="Nav">
         <h2 class="font-semibold text-xl leading-tight headerText">
             {{ __('Profile Information') }}
@@ -36,5 +42,5 @@
             </div>
         </div>
     </div>
-</x-app-layout>
 </body>
+</html>
