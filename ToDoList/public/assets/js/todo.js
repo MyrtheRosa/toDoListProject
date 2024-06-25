@@ -184,7 +184,6 @@ function getAllTodos() {
     axios
         .get("/todo")
         .then((response) => {
-            console.log("Data ontvangen van API:", response.data);
             loadFromDB(response.data);
         })
         .catch((error) => {
@@ -203,7 +202,6 @@ function handleStatus(e) {
 }
 
 async function clear() {
-    // Haal alle taken op
     const response = await axios
         .get("/todo")
         .then((response) => {
@@ -214,11 +212,11 @@ async function clear() {
                 deleteRequest(id);
             });
 
-            window.location.reload();
+            getAllTodos();
         })
         .catch((error) => {
             console.error("Fout bij het ophalen van data:", error);
-            window.location.reload();
+            getAllTodos();
         });
 }
 
@@ -229,13 +227,12 @@ async function deleteRequest(id) {
         .delete(`/todo/delete/${id}`)
         .then((response) => {
             console.log("Data verwijderd van API:", response.data);
-            return response;
             window.location.reload();
-            getAllTodos();
+            return response;
         })
         .catch((error) => {
             console.error(error);
-            window.location.reload();
+            getAllTodos();
         });
 }
 

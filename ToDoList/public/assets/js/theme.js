@@ -4,6 +4,10 @@ const settingDiv = document.querySelector(".menuDiv");
 document.addEventListener("DOMContentLoaded", function () {
     const radios = document.querySelectorAll('input[name="selectColor"]');
 
+    if (!document.cookie.includes("colorTheme")) {
+        saveColorTheme("Midnight");
+    }
+
     function saveColorTheme(theme) {
         document.cookie =
             "colorTheme=" +
@@ -11,21 +15,17 @@ document.addEventListener("DOMContentLoaded", function () {
             "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/";
     }
 
-    if (!document.cookie.includes("colorTheme")) {
-        saveColorTheme("Midnight");
-    }
-
-    function getCookie(cname) {
-        const name = cname + "=";
+    function getCookie(cookieName) {
+        const name = cookieName + "=";
         const decodedCookie = decodeURIComponent(document.cookie);
-        const ca = decodedCookie.split(";");
-        for (let i = 0; i < ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) === " ") {
-                c = c.substring(1);
+        const cookies = decodedCookie.split(";");
+        for (let i = 0; i < cookies.length; i++) {
+            let cookie = cookies[i];
+            while (cookie.charAt(0) === " ") {
+                cookie = cookie.substring(1);
             }
-            if (c.indexOf(name) === 0) {
-                return c.substring(name.length, c.length);
+            if (cookie.indexOf(name) === 0) {
+                return cookie.substring(name.length, cookie.length);
             }
         }
         return "";
@@ -151,8 +151,8 @@ document.addEventListener("DOMContentLoaded", function () {
     radios.forEach(function (radio) {
         radio.addEventListener("change", function () {
             const selectedTheme = this.value;
-            applyColorTheme(selectedTheme);
             saveColorTheme(selectedTheme);
+            applyColorTheme(selectedTheme);
         });
     });
 });
