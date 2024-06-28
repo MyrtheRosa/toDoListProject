@@ -36,16 +36,16 @@
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
             <!-- Password -->
-            <div class="input-box">
+            <div class="input-box confirm" style="border-bottom: 2px solid #fff;">
                 <input id="password" type="password" name="password" required autocomplete="new-password">
                 <label for="password">{{ __('Password') }}</label>
             </div>
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
             <!-- Confirm Password -->
-            <div class="input-box">
-                <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password">
-                <label for="password_confirmation">{{ __('Confirm Password') }}</label>
+            <div class="input-box" style="border-bottom: 2px solid #fff;">
+                <input id="password_confirmation" type="password" name="password_confirmation" required autocomplete="new-password" style="color:white;" >
+                <label for="password_confirmation" style="color:white;">{{ __('Confirm Password') }}</label>
             </div>
 
             <button type="submit" class="btn">

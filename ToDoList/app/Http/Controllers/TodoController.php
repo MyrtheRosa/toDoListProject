@@ -112,26 +112,4 @@ class TodoController extends Controller
 
         return redirect('/todos')->with('error', 'Todo not found');
     }
-
-    public function deleteAll()
-{
-    \Log::info('deleteAll methode aangeroepen');
-
-    $todos = Todo::all();
-
-    if ($todos->isNotEmpty()) {
-        foreach ($todos as $todo) {
-            $todo->delete();
-            \Log::info('Todo verwijderd: ' . $todo->id);
-        }
-        \Log::info('Alle todos verwijderd');
-        return response()->json(['message' => 'All todos deleted successfully.']);
-    }
-
-    \Log::info('Geen todos gevonden');
-    return response()->json(['message' => 'No todos found.'], 404);
-}
-
-
-
 }
